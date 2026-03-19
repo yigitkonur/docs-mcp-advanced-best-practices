@@ -13,7 +13,7 @@ Synthesized from Anthropic engineering docs, 30+ Reddit threads, GitHub implemen
 Install these patterns as an interactive Claude Code skill that routes you to the right pattern via decision trees:
 
 ```bash
-npx -y skills add -y -g yigitkonur/skills-by-yigitkonur/skills/build-mcp-server
+npx -y skills add -y -g yigitkonur/skills-by-yigitkonur/skills/develop-mcp-server
 ```
 
 The skill includes 7 decision trees for common MCP development decisions and all 113 patterns as searchable references.
