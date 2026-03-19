@@ -44,4 +44,4 @@ def set_preferences(ctx: Context, timezone: str, language: str):
 
 **Clean up:** Set TTLs or implement session cleanup to prevent memory leaks. Treat session state like API state: create on first use, clear when done, never leak between users.
 
-**Source:** NearForm - "Implementing MCP: Tips, tricks and pitfalls"; modelcontextprotocol.info best practices
+**Source:** [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/); [FastMCP state docs](https://gofastmcp.com)

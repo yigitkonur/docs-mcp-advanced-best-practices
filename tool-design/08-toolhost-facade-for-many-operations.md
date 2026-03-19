@@ -47,4 +47,4 @@ def admin_toolhost(
 
 **Why it matters:** The Toolhost pattern lets you scale to 50+ operations without hitting model confusion limits. The model only needs to understand one tool signature. The tradeoff is discoverability — the model must know which operations exist, so your description string must be comprehensive.
 
-**Source:** glassBead, "Design Patterns in MCP: Toolhost Pattern"; u/glassBeadCheney, r/mcp
+**Source:** [glassBead — Design Patterns in MCP: Toolhost Pattern](https://glassbead-tc.medium.com/design-patterns-in-mcp-toolhost-pattern-59e887885df3); [u/glassBeadCheney on r/mcp](https://reddit.com/r/mcp)

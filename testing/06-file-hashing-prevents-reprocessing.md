@@ -46,4 +46,4 @@ def call_tool_with_cache(tool_name: str, params: dict) -> dict:
 }
 ```
 
-**Source:** u/Main_Payment_6430, r/AI_Agents
+**Source:** [u/Main_Payment_6430 on r/AI_Agents](https://reddit.com/r/AI_Agents); [MotherDuck — Dev Diary: Building MCP](https://motherduck.com/blog/dev-diary-building-mcp/)

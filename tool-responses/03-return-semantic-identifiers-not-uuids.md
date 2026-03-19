@@ -30,4 +30,4 @@ Models reason in natural language. When you return `"id": "550e8400-e29b-41d4-a7
 
 **Why it matters:** Models retrieve and reason about natural language far better than opaque identifiers. When a subsequent tool call requires passing an ID, the model is more likely to use the correct one if it can associate it with a meaningful name.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [modelcontextprotocol.io — writing effective tools](https://modelcontextprotocol.io)

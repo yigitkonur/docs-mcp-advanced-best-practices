@@ -43,4 +43,4 @@ function estimateToolTokens(tools: Tool[]): void {
 
 **Why it matters:** Tool descriptions are a hidden fixed cost on every turn. Trimming them is one of the highest-ROI context optimisations you can make — it requires no architecture changes and compounds across the entire conversation.
 
-**Source:** u/TheNickmaster21 and u/violet_mango, r/ClaudeAI community measurements; `claude-code-proxy` by github.com/seifghazi.
+**Source:** u/TheNickmaster21 and u/violet_mango on [r/ClaudeAI](https://reddit.com/r/ClaudeAI/comments/1lnr1a5/); [claude-code-proxy](https://github.com/seifghazi/claude-code-proxy)

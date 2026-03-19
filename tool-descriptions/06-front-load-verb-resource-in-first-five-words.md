@@ -31,4 +31,4 @@ The anti-pattern is 50+ tokens before the model learns what the tool actually do
 
 **Key principle:** First 5 words → selection. Next 20 words → parameters. Everything after that → diminishing returns. Budget accordingly.
 
-**Source:** u/BC_MARO, r/mcp
+**Source:** Community best practices; Anthropic prompt engineering guidance on concise tool descriptions

@@ -113,4 +113,4 @@ process.on("SIGTERM", async () => {
 
 **Why it matters:** MCP servers under agentic load need autoscaling. Without proper rolling update config, deployments interrupt active agent sessions and corrupt in-progress tool calls.
 
-**Source:** Advanced MCP patterns research file (Kubernetes section); modelcontextprotocol.io deployment guide.
+**Source:** [Stacklok — Performance Testing MCP Servers in Kubernetes](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb); [modelcontextprotocol.io](https://modelcontextprotocol.io) deployment guide

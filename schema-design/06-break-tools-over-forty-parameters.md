@@ -1,15 +1,6 @@
 # Break Tools Over 40 Parameters
 
-40 parameters is the hard ceiling. Even 10+ degrades accuracy to ~85%.
-
-## Accuracy by Parameter Count
-
-| Parameters | Accuracy |
-|-----------|----------|
-| 3–6       | ~98%     |
-| 10–15     | ~85%     |
-| 20–30     | ~75%     |
-| 40+       | < 60%    |
+LLMs struggle increasingly as parameter count rises. The community consensus is to keep tools under 6 parameters for best results, and to split any tool exceeding 15-20 parameters.
 
 ## Strategy 1: Split by Workflow Stage
 
@@ -52,4 +43,4 @@ server.tool("database", {
 4. **40+:** mandatory split
 ---
 
-**Source:** u/raghav-mcpjungle, r/mcp; deep research with measured thresholds
+**Source:** [r/mcp discussion on tools with 40+ inputs](https://reddit.com/r/mcp/comments/1lv46oh/); community best practices

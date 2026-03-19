@@ -49,4 +49,4 @@ node my-server.js 2>/dev/null | jq .
 # Should parse cleanly - any error means stdout pollution
 ```
 
-**Source:** Stainless - "Error Handling And Debugging MCP Servers"; NearForm - "Implementing MCP: Tips, tricks and pitfalls"
+**Source:** [Stainless — Error Handling And Debugging MCP Servers](https://www.stainless.com/mcp/error-handling-and-debugging-mcp-servers); [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/)

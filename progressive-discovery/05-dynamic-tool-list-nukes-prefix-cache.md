@@ -43,4 +43,4 @@ Static tool lists are cache-friendly. Batch mutations at session boundaries.
 
 ---
 
-**Source:** u/crewrelaychat, r/mcp
+**Source:** [Anthropic prompt caching docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) — tool definition changes invalidate entire cache; [OpenAI function calling guide](https://platform.openai.com/docs/guides/function-calling) — tool array is part of cached prefix

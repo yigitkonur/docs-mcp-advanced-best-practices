@@ -38,4 +38,4 @@ if __name__ == "__main__":
 - Set appropriate CORS headers for browser clients
 - Configure session affinity in load balancers
 
-**Source:** NearForm - "Implementing MCP: Tips, tricks and pitfalls"; MCP specification transport section
+**Source:** [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/); [MCP specification — transport](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)

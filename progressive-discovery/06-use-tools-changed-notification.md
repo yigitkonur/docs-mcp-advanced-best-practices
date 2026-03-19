@@ -42,4 +42,4 @@ on the LLM side is not.
 
 ---
 
-**Source:** u/hasmcp, r/mcp; modelcontextprotocol/typescript-sdk source
+**Source:** [MCP specification — notifications/tools/list_changed](https://modelcontextprotocol.io/specification/2025-11-25/server/tools); [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)

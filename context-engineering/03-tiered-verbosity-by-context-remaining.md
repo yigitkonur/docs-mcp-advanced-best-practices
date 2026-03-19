@@ -51,4 +51,4 @@ def tiered_response(records: list[dict], budget: ContextBudget) -> dict:
 ```
 **Why it matters:** A tool that blindly returns 10,000 rows at turn 40 of a 50-turn session will silently degrade model performance; a tiered response gives the model a graceful off-ramp to request only what it needs.
 
-**Source:** LlamaIndex context-aware tool patterns; production synthesis from r/ClaudeAI and r/mcp community reports on context exhaustion failures.
+**Source:** Production patterns from context-aware MCP server design; community reports on context exhaustion from [r/ClaudeAI](https://reddit.com/r/ClaudeAI) and [r/mcp](https://reddit.com/r/mcp)

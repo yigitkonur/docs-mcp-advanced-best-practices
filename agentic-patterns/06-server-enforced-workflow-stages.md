@@ -57,11 +57,10 @@ server.tool("commit_changes", "Commit validated changes. Requires validation sta
 });
 ```
 
-## Real-World Use Case
+## Why Stage Gates Matter
 
-From a production deployment server (paraphrased from u/johndeuff on r/mcp):
-> "We had agents skipping the validate step and calling deploy directly. Adding server-side stage checks dropped deployment errors by 80%. The agent can't skip the step — it gets a clear error saying what's required."
+Without server-enforced stages, agents routinely skip prerequisite steps -- calling `deploy` before `validate`, or `commit` before `analyze`. The agent may appear confident, but it has no structural reason to follow the correct order. Stage gates eliminate this class of error entirely: an out-of-order call receives a clear error specifying the required next step, making the wrong path structurally impossible.
 
 **Why it matters:** Documentation and prompt guidance are suggestions. Stage gates are enforcement. For consequential workflows (deployments, financial operations, data migrations), server-side stage enforcement is the only reliable safeguard.
 
-**Source:** r/mcp production deployment discussion (u/johndeuff); steering-patterns research file §3 on state machine enforcement.
+**Source:** State machine enforcement patterns; community discussions on [r/mcp](https://reddit.com/r/mcp)

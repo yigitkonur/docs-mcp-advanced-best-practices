@@ -39,4 +39,4 @@ def send_bulk_email(recipients: list[str], subject: str, body: str) -> dict:
 
 **Why not just trust the model?** Because prompt injection can make the model believe a destructive action is what the user wants. A human-in-the-loop is the only reliable defense for irreversible operations.
 
-**Source:** u/sjoti r/mcp - "Tools that only read? Always allow. Tools that send data, update or delete them? Always have a human in there if it takes external data as input."
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) — "Tools that only read? Always allow. Tools that send data, update or delete them? Always have a human in there if it takes external data as input."

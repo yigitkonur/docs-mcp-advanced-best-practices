@@ -42,4 +42,4 @@ def query_api(endpoint: str, params: dict) -> dict:
 
 **Privacy note:** Be careful about logging sensitive parameters. Strip PII before storing.
 
-**Source:** u/Simple-Art-2338 r/mcp - "I tried an approach which worked for me... that reduced my error more than 50%"
+**Source:** [u/Simple-Art-2338 on r/mcp](https://reddit.com/r/mcp/comments/1npfoo9/) — "reduced my error more than 50%"

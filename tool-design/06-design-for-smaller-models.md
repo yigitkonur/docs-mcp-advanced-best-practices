@@ -1,6 +1,6 @@
 # Design Tool Workflows for 3-5 Calls, Not 20+
 
-Currently only Anthropic's largest models reliably handle 20+ sequential tool calls without losing track of state. Most open-source and smaller commercial models start degrading after 5-7 calls — they forget earlier results, hallucinate parameters, or loop. If your MCP server requires 15 tool calls to complete a common task, you've locked yourself into expensive frontier models.
+Frontier models handle 20+ sequential tool calls, but smaller and open-source models degrade after 5-7 — they forget earlier results, hallucinate parameters, or loop. If your MCP server requires 15 tool calls to complete a common task, you've locked yourself into expensive frontier models.
 
 The fix is to design tools so that the most common user goals complete in 3-5 calls. This doesn't mean fewer tools — it means each tool does more meaningful work per invocation.
 
@@ -36,4 +36,4 @@ def get_repo_activity(
 
 **Why it matters:** Designing for 3-5 calls means your MCP server works with GPT-4o-mini, Haiku, Gemma, and every future small model — not just Claude Opus. It also cuts latency and token costs by 4-10x. If only Sonnet can use your server, you've dramatically limited your audience.
 
-**Source:** u/sjoti, r/mcp (278 upvotes thread) — "Design things in a way that tasks only take 3-5 tool calls instead of 20+"
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) — "Design things in a way that tasks only take 3-5 tool calls instead of 20+"

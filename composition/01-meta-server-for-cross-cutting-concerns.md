@@ -44,12 +44,12 @@ class MCPGateway:
 mcp = FastMCP("Gateway")
 
 # Mount sub-servers with namespace transforms
-mcp.mount(github_server, prefix="github")
-mcp.mount(jira_server, prefix="jira")
-mcp.mount(slack_server, prefix="slack")
+mcp.mount(github_server, namespace="github")
+mcp.mount(jira_server, namespace="jira")
+mcp.mount(slack_server, namespace="slack")
 
 # Apply cross-cutting middleware
-mcp.add_middleware(AuthMiddleware(tag="all", scopes={"authenticated"}))
+mcp.add_transform(AuthMiddleware(tag="all", scopes={"authenticated"}))
 ```
 
 **The gateway pattern also enables:**
@@ -58,4 +58,4 @@ mcp.add_middleware(AuthMiddleware(tag="all", scopes={"authenticated"}))
 - Version routing (send 20% of traffic to v2)
 - Tool visibility control per user/session
 
-**Source:** NearForm - "Implementing MCP: Tips, tricks and pitfalls"; FastMCP 3.0 blog; modelcontextprotocol.info best practices
+**Source:** [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/); [FastMCP 3.0 blog](https://jlowin.dev/blog/fastmcp-3); [MCP specification](https://modelcontextprotocol.io)

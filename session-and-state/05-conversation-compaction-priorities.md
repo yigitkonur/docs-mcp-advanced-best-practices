@@ -52,4 +52,4 @@ Classify upfront, compact bottom-up, cache results for O(1) reuse.
 
 ---
 
-**Source:** pgEdge — "Lessons Learned Writing an MCP Server for PostgreSQL"
+**Source:** [pgEdge — Lessons Learned Writing an MCP Server for PostgreSQL](https://www.pgedge.com/blog/lessons-learned-writing-an-mcp-server-for-postgresql)

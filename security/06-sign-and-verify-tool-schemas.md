@@ -41,4 +41,4 @@ for tool in loaded_tools:
 
 **What to include in the signed payload:** Tool name, description, parameter schemas, and any annotation fields (`readOnlyHint`, `destructiveHint`). An attacker flipping `destructiveHint` from `true` to `false` can bypass confirmation gates.
 
-**Source:** u/Additional-Value4345 r/mcp; u/NexusVoid_AI r/mcp
+**Source:** [u/Additional-Value4345 on r/mcp](https://reddit.com/r/mcp); [Christian Schneider — Securing MCP: a defense-first architecture guide](https://christian-schneider.net/blog/securing-mcp-defense-first-architecture/)

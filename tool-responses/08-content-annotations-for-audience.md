@@ -57,4 +57,4 @@ The model sees everything and can use the debug data to optimize subsequent call
 
 **Note:** Client support for annotations varies. Well-behaved clients will respect `audience` and hide assistant-only content. Clients that ignore annotations will show everything — so keep assistant-only content informative but not confusing if a user happens to see it.
 
-**Source:** modelcontextprotocol/servers — everything server reference implementation; MCP specification for content annotations.
+**Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — everything server reference implementation; [MCP specification — content annotations](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)

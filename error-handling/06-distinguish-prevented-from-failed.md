@@ -45,4 +45,4 @@ def schedule_meeting(date: str, title: str):
 
 **Key distinction:** `isError: true` tells the protocol something went wrong. The *text* tells the agent whether to feel bad about it or just adjust one parameter. The text matters more than the flag.
 
-**Source:** u/jbr, r/mcp (260 upvotes thread); deep research findings on agent retry behavior
+**Source:** [u/jbr, commenting on r/mcp](https://reddit.com/r/mcp/comments/1lhws59/) (261-upvote thread by u/incidentjustice)

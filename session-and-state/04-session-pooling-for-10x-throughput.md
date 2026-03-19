@@ -49,4 +49,4 @@ Pool connections, externalize state, let the pool handle lifecycle.
 
 ---
 
-**Source:** Stacklok — "Performance Testing MCP Servers in Kubernetes"
+**Source:** [Stacklok — Performance Testing MCP Servers in Kubernetes](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb)

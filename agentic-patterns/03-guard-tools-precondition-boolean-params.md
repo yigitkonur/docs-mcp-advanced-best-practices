@@ -53,4 +53,4 @@ Choose the layer based on the stakes: a destructive cloud operation warrants a h
 
 **Why it matters:** Boolean guard params force the agent to explicitly acknowledge preconditions rather than rushing through a workflow. They produce audit-log evidence of what the agent claimed was true before a destructive action.
 
-**Source:** PayMCP project safety design (github.com/payloads/paymcp); r/mcp discussion on "agent safety for destructive tools"; steering-patterns research file §6.
+**Source:** Safety patterns discussed in [r/mcp](https://reddit.com/r/mcp); defense-in-depth principles for agentic tool execution

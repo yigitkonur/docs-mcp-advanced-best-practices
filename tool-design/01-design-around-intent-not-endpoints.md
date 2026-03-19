@@ -32,4 +32,4 @@ def get_space_activity(space_id: str, days: int = 30, sort_by: str = "total_acti
 
 **When to consolidate:** If 3+ API calls always happen together for a common use case, they belong in one tool.
 
-**Source:** u/sjoti r/mcp (279 upvotes); u/glassBeadCheney r/mcp - "Sable Principle" and Toolhost Pattern
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) (279 upvotes); [u/glassBeadCheney on r/mcp](https://reddit.com/r/mcp) — "Sable Principle" and Toolhost Pattern

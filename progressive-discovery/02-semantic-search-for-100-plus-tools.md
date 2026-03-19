@@ -38,4 +38,4 @@ def find_tools(query: str) -> list[dict]:
 - Store embeddings in FAISS (in-memory) or Pinecone (distributed)
 - Keep full JSON schemas in a separate KV store, not in the embedding index
 
-**Source:** Speakeasy blog - "Comparing Progressive Discovery and Semantic Search"; Klavis AI - "Less is More: 4 design patterns for building better MCP servers"
+**Source:** [Speakeasy — Comparing Progressive Discovery and Semantic Search](https://www.speakeasy.com/blog/100x-token-reduction-dynamic-toolsets); [Klavis AI — Less is More](https://www.klavis.ai/blog/less-is-more-mcp-design-patterns-for-ai-agents)

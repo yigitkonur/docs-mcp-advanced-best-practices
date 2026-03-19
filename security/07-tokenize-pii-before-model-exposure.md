@@ -39,4 +39,4 @@ class PIITokenizer:
 
 **Also implement response interceptors:** Scan model completions for PII patterns that leaked through. This is your second line of defense — catch anything the tokenizer missed.
 
-**Source:** Anthropic "Code Execution with MCP"; u/hasmcp r/mcp
+**Source:** [Anthropic — Code Execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp); [u/hasmcp on r/mcp](https://reddit.com/r/mcp)

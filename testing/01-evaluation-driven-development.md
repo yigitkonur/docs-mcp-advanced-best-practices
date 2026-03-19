@@ -49,4 +49,4 @@ def run_eval(task: dict, tools: list) -> dict:
 
 **Pro tip - auto-refactoring:** Feed the full evaluation transcript back to Claude and ask it to suggest description tweaks, parameter clarifications, and schema fixes based on where the model struggled.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [modelcontextprotocol.io — writing effective tools](https://modelcontextprotocol.io)

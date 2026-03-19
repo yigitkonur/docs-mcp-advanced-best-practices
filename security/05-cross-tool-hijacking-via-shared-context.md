@@ -35,4 +35,4 @@ HIGH TRUST (isolated context):     LOW TRUST (sandboxed):
 
 **Key insight:** The attack surface isn't code execution — it's context pollution. Audit your active tool set the same way you audit dependencies.
 
-**Source:** u/Marmelab r/mcp; u/BC_MARO r/mcp; u/NexusVoid_AI r/mcp
+**Source:** [Marmelab — MCP Security Vulnerabilities](https://marmelab.com/blog/2026/02/16/mcp-security-vulnerabilities.html); [Invariant Labs — MCP Security: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks); [u/NexusVoid_AI on r/mcp](https://reddit.com/r/mcp)

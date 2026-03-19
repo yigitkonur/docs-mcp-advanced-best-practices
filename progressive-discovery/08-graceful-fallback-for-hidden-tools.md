@@ -2,7 +2,7 @@
 
 When you hide a tool via progressive disclosure, a stateful LLM may still "remember" that tool from earlier in the conversation and attempt to call it. Handle this gracefully rather than returning a generic not-found error.
 
-The DarkMatter MCP project coined this the "DarkMatter" problem: tools that exist but are currently invisible can cause agent confusion if the model has prior knowledge of them.
+This is a recommended pattern for progressive disclosure systems: tools that exist but are currently invisible can cause agent confusion if the model has prior knowledge of them.
 
 ## Detection and Recovery Pattern
 
@@ -63,4 +63,4 @@ server.tool("restore_tool", "Restore a temporarily hidden tool for this session"
 
 **Why it matters:** Without graceful fallback, a model that remembers a hidden tool will retry it repeatedly, wasting context on uninformative error messages. The TOOL_NOT_CURRENTLY_VISIBLE response guides recovery.
 
-**Source:** DarkMatter MCP project (github.com/darkmatter-mcp); dynamic-tools-patterns research file §2; r/mcp discussion on tool visibility edge cases.
+**Source:** Recommended pattern for progressive disclosure; community discussions on tool visibility from [r/mcp](https://reddit.com/r/mcp)

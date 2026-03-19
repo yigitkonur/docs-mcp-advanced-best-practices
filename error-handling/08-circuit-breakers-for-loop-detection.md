@@ -52,4 +52,4 @@ def handle_tool_call(tool_name: str, params: dict):
 
 **Tuning:** 3 repeats within 2 minutes is a reasonable default. Tighten for fast tools (API lookups), loosen for tools with legitimate retries (file uploads with transient failures).
 
-**Source:** u/Main_Payment_6430, r/AI_Agents; circuit breaker pattern via Pragmatic Engineer
+**Source:** [u/Main_Payment_6430 on r/AI_Agents](https://reddit.com/r/AI_Agents/comments/1qxh5ip/) — "$63 overnight" agent loop incident

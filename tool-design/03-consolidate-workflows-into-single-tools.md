@@ -45,4 +45,4 @@ def deploy_project(
 
 **Implementation tip:** Use try/except around each sub-step and return a structured error indicating which stage failed, so the model knows what was already completed.
 
-**Source:** Klavis AI - "Less is More: 4 design patterns for building better MCP servers"
+**Source:** [Klavis AI — Less is More: MCP Design Patterns for AI Agents](https://www.klavis.ai/blog/less-is-more-mcp-design-patterns-for-ai-agents)

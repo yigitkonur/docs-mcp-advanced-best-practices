@@ -37,4 +37,4 @@ def search_customers(query: str, status: str = "active", limit: int = 10): ...
 
 **Community reality check:** Most builders only use tools because client support for resources is inconsistent. Resources work well in Goose and some clients but Claude Desktop/Code support is limited. If portability matters, default to tools and add resources as a nice-to-have.
 
-**Source:** u/Dipseth r/mcp - uses resource templates for API documentation; u/dankelleher r/mcp - "Does anyone use MCP prompts or resources?" thread
+**Source:** [u/Dipseth on r/mcp](https://reddit.com/r/mcp) — uses resource templates for API documentation; [u/dankelleher on r/mcp](https://reddit.com/r/mcp) — "Does anyone use MCP prompts or resources?" thread

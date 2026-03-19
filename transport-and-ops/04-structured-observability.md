@@ -44,4 +44,4 @@ def health():
 
 **Non-obvious insight:** Track token estimates per response. A tool that returns 20k tokens on every call is burning context window and money. This metric helps you identify tools that need a `response_format` enum or pagination.
 
-**Source:** modelcontextprotocol.info best practices; Pragmatic Engineer - "Building MCP servers in the real world"
+**Source:** [modelcontextprotocol.io](https://modelcontextprotocol.io) best practices; [Pragmatic Engineer — MCP Deep Dive](https://newsletter.pragmaticengineer.com/p/mcp-deepdive)

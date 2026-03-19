@@ -30,4 +30,4 @@ Production / multi-tenant  → Streamable HTTP + session pooling + load balancer
 
 **If you're building a new MCP server today**, start with Streamable HTTP transport. The migration cost from stdio to HTTP later is non-trivial — you'll need to rethink session management, add health endpoints, and handle concurrent state.
 
-**Source:** Stacklok — "Performance Testing MCP Servers in Kubernetes"
+**Source:** [Stacklok — Performance Testing MCP Servers in Kubernetes](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb)

@@ -37,4 +37,4 @@ def execute_tool(tool_id: str, arguments: dict) -> dict:
 
 **Anti-pattern:** Loading all tool schemas statically into the prompt. Beyond ~200 tools, this exceeds Claude's context window and tasks cannot complete at all.
 
-**Source:** Speakeasy blog - "Comparing Progressive Discovery and Semantic Search for Dynamic Toolsets" (with benchmark data)
+**Source:** [Speakeasy — Comparing Progressive Discovery and Semantic Search](https://www.speakeasy.com/blog/100x-token-reduction-dynamic-toolsets)

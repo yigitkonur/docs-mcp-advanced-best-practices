@@ -28,4 +28,4 @@ Generic parameter names like `user`, `id`, or `data` force the model to infer me
 
 **Why it matters:** Models treat parameter schemas as part of the prompt. Rich schemas with enums and descriptions act as inline documentation that reduces round-trips and retries by ~25%.
 
-**Source:** modelcontextprotocol.info/docs/tutorials/writing-effective-tools/; NearForm - "Implementing MCP: Tips, tricks and pitfalls"
+**Source:** [MCP writing effective tools tutorial](https://modelcontextprotocol.info/docs/tutorials/writing-effective-tools/); [NearForm — Implementing MCP: Tips, tricks and pitfalls](https://www.nearform.com/digital-community/implementing-mcp-tips-tricks-and-pitfalls/)

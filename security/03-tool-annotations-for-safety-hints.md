@@ -38,4 +38,4 @@ def delete_project(project_id: str) -> dict:
 
 **Note:** Not all clients respect annotations yet, but setting them is forward-compatible and documents intent even for human readers.
 
-**Source:** MCP specification - Tools section (modelcontextprotocol.io); Anthropic Engineering Blog
+**Source:** [MCP specification — Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools); [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents)

@@ -42,4 +42,4 @@ def threat_framework(app_description: str) -> dict:
 3. Return data in formats that other tools can consume as input
 4. Don't make servers depend on each other directly - let the LLM chain them
 
-**Source:** Matt Adams - "MCP Server Design Principles"; u/glassBeadCheney r/mcp - composable multi-server patterns
+**Source:** [Matt Adams — MCP Server Design Principles](https://matt-adams.co.uk/2025/08/30/mcp-design-principles.html); u/glassBeadCheney on [r/mcp](https://reddit.com/r/mcp)

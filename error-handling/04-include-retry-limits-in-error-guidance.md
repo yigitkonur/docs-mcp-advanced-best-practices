@@ -45,4 +45,4 @@ def process_payment(order_id: str, _retry_count: int = 0):
 
 **Why it matters:** Without limits, some models will retry 10+ times, burning tokens and time. The fallback also prevents the model from giving up entirely - it provides a human escalation path.
 
-**Source:** alpic.ai/blog - "Better MCP tool call error responses"; Stainless - "Error Handling And Debugging MCP Servers"
+**Source:** [alpic.ai — Better MCP tool call error responses](https://alpic.ai/blog/better-mcp-tool-call-error-responses-ai-recover-gracefully); [Stainless — Error Handling And Debugging MCP Servers](https://www.stainless.com/mcp/error-handling-and-debugging-mcp-servers)

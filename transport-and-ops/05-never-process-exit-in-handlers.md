@@ -45,4 +45,4 @@ async def safe_handler(func, **kwargs):
         return [TextContent(type="text", text=f"Internal error: {type(e).__name__}: {e}")]
 ```
 
-**Source:** u/rhuanbarreto, r/softwarearchitecture
+**Source:** [u/rhuanbarreto on r/softwarearchitecture](https://reddit.com/r/softwarearchitecture); [Stainless — Error Handling And Debugging MCP Servers](https://www.stainless.com/mcp/error-handling-and-debugging-mcp-servers)

@@ -38,4 +38,4 @@ except Exception as e:
     return {"error": "An internal error occurred. Please try again.", "isError": True}
 ```
 
-**Source:** u/EggplantFunTime r/mcp; u/sjoti r/mcp; Corgea - "Securing MCP Servers: Threats and Best Practices"; NCC Group - "5 MCP Security Tips"
+**Source:** [u/EggplantFunTime on r/mcp](https://reddit.com/r/mcp); [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/); [Corgea — Securing MCP Servers: Threats and Best Practices](https://corgea.com/Learn/securing-model-context-protocol-(mcp)-servers-threats-and-best-practices); [NCC Group — 5 MCP Security Tips](https://www.nccgroup.com/research/5-mcp-security-tips/)

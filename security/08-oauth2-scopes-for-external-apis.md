@@ -45,4 +45,4 @@ def is_safe_url(url: str) -> bool:
 - Bind sessions to user identity; verify on every request.
 - Rotate on privilege escalation. TTL: 15 min for elevated scopes, 1 hour for read-only.
 
-**Source:** u/hasmcp r/mcp; MCP Official Security Best Practices
+**Source:** [u/hasmcp on r/mcp](https://reddit.com/r/mcp); [NCC Group — 5 MCP Security Tips](https://www.nccgroup.com/research/5-mcp-security-tips/); [MCP specification — security](https://modelcontextprotocol.io)

@@ -47,4 +47,4 @@ def load_module(name: str):
 
 **Why this works:** LLMs are pattern-completion machines. "Not found" primes a failure-recovery pattern. A list of options primes a selection pattern. The selection pattern is far more productive.
 
-**Source:** Snyk, "5 Best Practices for Building MCP Servers"
+**Source:** Community best practices from [r/mcp](https://reddit.com/r/mcp); LLM behavioral observations on negative vs. positive framing

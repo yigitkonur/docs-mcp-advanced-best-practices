@@ -29,4 +29,4 @@ def create_project(name: str, repo_url: str) -> dict:
 
 **Real-world example:** One practitioner built a data visualization MCP server where a "planner tool" returns structured guidance about what order to call visualization tools. Every subsequent tool response reinforces the workflow with further guidance. They call this "flattening the agent back into the model."
 
-**Source:** u/sjoti r/mcp (279 upvotes); u/Biggie_2018 r/mcp (McKinsey vizro-mcp)
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) (279 upvotes); [u/Biggie_2018 on r/mcp](https://reddit.com/r/mcp) — McKinsey [vizro-mcp](https://github.com/mckinsey/vizro)

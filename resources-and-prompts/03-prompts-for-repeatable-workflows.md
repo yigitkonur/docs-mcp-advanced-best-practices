@@ -53,4 +53,4 @@ def analyze_bug(
 
 **Current limitation:** Most clients don't fully support prompt template values persistence yet. Claude Desktop supports prompts but can't persist saved parameter values across sessions.
 
-**Source:** u/mettavestor r/mcp - "I integrated prompts in my sequential thinking MCP designed for coding"; MCP blog - "MCP Prompts: Building Workflow Automation"
+**Source:** [u/mettavestor on r/mcp](https://reddit.com/r/mcp) — "I integrated prompts in my sequential thinking MCP designed for coding"; [MCP specification — prompts](https://modelcontextprotocol.io/specification/2025-11-25/server/prompts)

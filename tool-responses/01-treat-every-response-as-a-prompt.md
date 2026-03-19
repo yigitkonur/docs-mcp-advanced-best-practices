@@ -30,4 +30,4 @@ An MCP-optimized response:
 - Internal IDs without human-readable labels
 - Technical metadata the model can't reason about
 
-**Source:** u/sjoti, r/mcp (279 upvotes, 40 comments). One commenter called this "HATEOAS at the language level." Another: "I ended up instructing the model with every MCP response with amazing results."
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) (279 upvotes, 40 comments). One commenter called this "HATEOAS at the language level." Another: "I ended up instructing the model with every MCP response with amazing results."

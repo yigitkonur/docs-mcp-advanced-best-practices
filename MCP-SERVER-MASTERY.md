@@ -1,7 +1,7 @@
 # MCP Server Mastery: The Complete Guide
 
 > 112 battle-tested patterns for building MCP servers that LLMs actually use correctly.
-> Synthesized from Anthropic engineering docs, 30+ Reddit threads, GitHub implementations, arXiv papers, and production experience.
+> Synthesized from [Anthropic engineering docs](https://www.anthropic.com/engineering/writing-tools-for-agents), the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [OpenAI function calling guide](https://platform.openai.com/docs/guides/function-calling), 30+ Reddit threads, GitHub implementations, arXiv papers, and production experience.
 
 ---
 
@@ -11,12 +11,12 @@
 |---|---|---|
 | Tool count | Keep under 40 per server | Performance cliff measured across Claude, GPT-4, Gemini |
 | Description length | 20-50 words core; XML tags for structure | >100 words partially ignored; Gemini needs <75 tokens |
-| Schema params | Max 6 top-level, flat only | 98% parse success flat vs <70% nested 12+ params |
-| Enum vs string | Always use enums for known values | Valid-call rate: 60% (string) → 95%+ (enum) |
+| Schema params | Max 6 top-level, flat only | Flat schemas achieve significantly higher parse success than nested schemas with many parameters |
+| Enum vs string | Always use enums for known values | Enums dramatically improve valid-call rates compared to free-form strings |
 | Response format | Structured data + _next_steps + metadata | Every response IS a prompt to the LLM |
-| Error format | isError:true + corrected_call + recovery_tool | Structured errors: 62% → 89% task completion |
-| Examples in descriptions | Always include one good + one bad | +25-35% accuracy improvement |
-| Transport | stdio (local), Streamable HTTP (remote) | SSE is deprecated in MCP spec |
+| Error format | isError:true + corrected_call + recovery_tool | Structured errors significantly improve task completion vs. unstructured errors |
+| Examples in descriptions | Always include one good + one bad | Measurably improves accuracy |
+| Transport | stdio (local), Streamable HTTP (remote) | SSE is deprecated in [MCP spec](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) |
 | Token tax | ~15% of Claude Code input = tool definitions | Each tool costs 50-150 tokens per message |
 
 ---
@@ -170,7 +170,7 @@ def create_plan(task_description: str) -> dict:
 
 ### Code Execution Sandbox: 98.7% Token Savings
 
-For batch operations, expose a single `execute_code` tool that runs LLM-generated Python in a sandbox. Dramatically more token-efficient than dozens of individual tool calls.
+For batch operations, expose a single `execute_code` tool that runs LLM-generated Python in a sandbox. Dramatically more token-efficient than dozens of individual tool calls. See [Anthropic's code execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp) for the full pattern.
 
 ```typescript
 // TypeScript MCP SDK
@@ -365,7 +365,7 @@ Use the `instructions` field in server info as a mini-SKILL.md with domain conte
 
 ### Correct AND Incorrect Call Examples
 
-Include both positive and negative examples in descriptions - boosts accuracy 25-35%:
+Include both positive and negative examples in descriptions - measurably improves accuracy:
 
 ```python
 @tool(description="Write content to file path. Example: write_file(path='/tmp/out.txt', content='hello'). Do NOT use for: binaries, files >1MB, remote paths.")
@@ -1169,7 +1169,7 @@ def get_method_docs(client: str, method: str) -> str:
 
 **Flow:** Model calls `api_call` → if wrong, error says "See tool://all" → model reads resource → reads detailed docs → calls correctly. Resources aren't preemptively pushed; they're fetched on-demand, saving tokens.
 
-### 9.4 Provider + Transform Architecture (FastMCP 3.0)
+### 9.4 Provider + Transform Architecture ([FastMCP 3.0](https://jlowin.dev/blog/fastmcp-3))
 
 Providers source components; Transforms modify behavior. This is the most flexible approach to building complex MCP servers.
 
@@ -1490,7 +1490,7 @@ This is the strongest defense against prompt injection — damage is limited to 
 
 ### 11.3 Tool Annotations for Safety Hints
 
-MCP spec supports tool annotations that tell agents about a tool's safety characteristics. Enables automatic permission decisions.
+The [MCP spec](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) supports tool annotations that tell agents about a tool's safety characteristics. Enables automatic permission decisions.
 
 ```python
 @tool(
@@ -1813,7 +1813,7 @@ def next_page(ctx: Context):
 
 ### 12.4 Session Pooling for 10x Throughput
 
-A shared pool of 10 sessions delivers ~10× higher throughput than unique-session-per-request. Benchmarks from Kubernetes testing:
+A shared pool of 10 sessions delivers ~10x higher throughput than unique-session-per-request. [Benchmarks from Kubernetes testing](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb):
 
 | Configuration | Req/s | Avg Response |
 |---|---|---|
@@ -1940,7 +1940,7 @@ function estimateToolTokens(tools: Tool[]): void {
 
 Instead of registering every tool upfront, expose a single `execute_code()` tool. The model calls `list_servers()` for names only, then `list_tools(server)` for names + one-line descriptions, then `get_tool_schema(server, tool)` **only when needed**. Full schemas are fetched on-demand and discarded after the call, not injected permanently.
 
-**Benchmarks:** 1,000 tool definitions drops from 150k to 2k tokens (98.7%); 10,000-row spreadsheet filter drops from 10k to 0.5k (95%); Slack polling loop with per-iteration tool cost drops 80%.
+**Benchmarks** (see [Speakeasy: 100x Token Reduction with Dynamic Toolsets](https://www.speakeasy.com/blog/100x-token-reduction-dynamic-toolsets)): 1,000 tool definitions drops from 150k to 2k tokens (98.7%); 10,000-row spreadsheet filter drops from 10k to 0.5k (95%); Slack polling loop with per-iteration tool cost drops 80%.
 
 ```python
 @server.tool()
@@ -2129,7 +2129,7 @@ Registering more tools doesn't make a model more capable — past a model-specif
 | GPT-4 / 4.1 | 15–20 | 128 (API limit) | Hallucinated calls above 50; latency doubles above 15 |
 | Gemini 1.5 | 10 | ~100 | Built for single-call; quality drops above 10 |
 
-**OpenAI explicitly recommends max 20 tools.** The implication: tool roster management is your responsibility, not handled gracefully by the model.
+**[OpenAI explicitly recommends max 20 tools.](https://platform.openai.com/docs/guides/function-calling)** The implication: tool roster management is your responsibility, not handled gracefully by the model.
 
 ✅ **Good: Tool group registry — expose only tools relevant to task**
 ```typescript
@@ -2490,7 +2490,7 @@ fastmcp dev server.py
 5. Test: Call tools in Inspector to verify
 6. Repeat
 
-**FastMCP 3.0:** Tool decorators return the original Python function, so you can:
+**[FastMCP 3.0](https://jlowin.dev/blog/fastmcp-3):** Tool decorators return the original Python function, so you can:
 ```python
 @tool
 def add(a: int, b: int) -> int:
@@ -2677,7 +2677,7 @@ async def search_tickets(query: str) -> list[TextContent]:
 
 ### 15.8 Transport Choice Determines Production Concurrency
 
-Transport selection determines whether your MCP server handles production concurrency. Real Kubernetes load testing benchmarks:
+Transport selection determines whether your MCP server handles production concurrency. Real [Kubernetes load testing benchmarks](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb):
 
 | Transport | Concurrency | Success % | Req/s | Avg Response |
 |---|---|---|---|---|
@@ -3281,6 +3281,19 @@ def get_user_data(user_id: str):
 **End of Part B (Sections 9–17)**
 
 This guide covers advanced MCP patterns for production deployment. Start with composition and security patterns (9–11), then layer in session management (12), context engineering (13), testing (14), and operations (15). Use the model-specific optimization table (16) to tune for your target models, and audit your server against the anti-patterns list (17) before production.
+
+---
+
+## Sources
+
+- [MCP Specification - Server Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+- [Anthropic: Writing Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+- [Anthropic: Code Execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp)
+- [OpenAI: Function Calling Guide](https://platform.openai.com/docs/guides/function-calling)
+- [FastMCP 3.0](https://jlowin.dev/blog/fastmcp-3)
+- [Stacklok: Performance Testing MCP Servers in Kubernetes](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb)
+- [Speakeasy: 100x Token Reduction with Dynamic Toolsets](https://www.speakeasy.com/blog/100x-token-reduction-dynamic-toolsets)
+- [Docker Blog: MCP Server Best Practices](https://www.docker.com/blog/mcp-server-best-practices/)
 
 ---
 

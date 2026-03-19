@@ -56,4 +56,4 @@ function cleanOutput(raw: string): string {
 
 **Why it matters:** ANSI decoration can inflate CLI output by 5–95× in token terms — stripping it is a zero-logic-change optimisation that pays back immediately on every tool call.
 
-**Source:** github.com/Dave-London/Pare (Pare MCP project); r/ClaudeAI community benchmarks (36 upvotes); Anthropic prompt engineering docs on tool response design.
+**Source:** [Pare MCP project](https://github.com/Dave-London/Pare); [u/Dave-London on r/ClaudeAI](https://reddit.com/r/ClaudeAI/comments/1r1tgxy/)

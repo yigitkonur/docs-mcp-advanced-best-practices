@@ -58,4 +58,4 @@ function validatePortability(schema: JsonSchema): string[] {
 
 **Why it matters:** A schema that crashes Gemini silently drops the tool from that client's context. Cross-model portability rules let you build once and deploy everywhere.
 
-**Source:** Gemini tool use documentation (ai.google.dev); OpenAI function calling guide; community cross-model testing discussions in r/mcp.
+**Source:** [Gemini function calling docs](https://ai.google.dev/gemini-api/docs/function-calling); [OpenAI function calling guide](https://platform.openai.com/docs/guides/function-calling); community cross-model testing from [r/mcp](https://reddit.com/r/mcp)

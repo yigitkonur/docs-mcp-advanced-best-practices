@@ -19,4 +19,4 @@ Pick one scheme and use it consistently. Different LLMs respond better to differ
 
 **Why it matters:** Agents use tool names as the first disambiguation signal. Without namespacing, the model must rely entirely on description text to distinguish between `search` (contacts) and `search` (files), which fails under context pressure.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [MCP writing effective tools tutorial](https://modelcontextprotocol.info/docs/tutorials/writing-effective-tools/)

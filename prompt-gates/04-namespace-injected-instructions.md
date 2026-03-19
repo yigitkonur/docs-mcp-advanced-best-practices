@@ -45,6 +45,8 @@ def validate_next_tool(current_tool: str, requested_next: str) -> bool:
 
 Every tool response should include `_agent_guidance` with a consistent shape. The model learns the pattern quickly and follows it reliably.
 
+**Note:** The `_agent_guidance` convention and `TOOL_GRAPH` validation are proposed patterns, not established standards. They represent a reasonable defense-in-depth approach but have not been widely adopted yet.
+
 ---
 
-**Source:** Deep research synthesis; security considerations from prompt injection literature and MCP server hardening.
+**Source:** Proposed pattern inspired by prompt injection research; [Palo Alto Unit 42 MCP research](https://unit42.paloaltonetworks.com); [Invariant Labs — MCP tool poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)

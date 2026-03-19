@@ -38,4 +38,4 @@ The description adds three things the schema cannot:
 
 **Key principle:** Schema = what's valid. Description = what's wise.
 
-**Source:** u/GentoroAI, r/mcp
+**Source:** [u/GentoroAI on r/mcp](https://reddit.com/r/mcp/comments/1ooqeqy/)

@@ -55,4 +55,4 @@ Add this check to CI to catch violations before deployment — a broken tool nam
 
 **Why it matters:** Special characters in tool names produce silent failures in the client, not server-side errors. The LLM gets no response, the agent hangs, and the root cause is invisible without client-side logs.
 
-**Source:** r/mcp community issue report (u/sjoti); GitHub issue on modelcontextprotocol/sdk #142; schema-design research synthesis.
+**Source:** [anthropics/claude-code#2257](https://github.com/anthropics/claude-code/issues/2257) (tool name validation); [modelcontextprotocol/typescript-sdk#1512](https://github.com/modelcontextprotocol/typescript-sdk/issues/1512) (SEP-986 tool name spec); community reports from [r/mcp](https://reddit.com/r/mcp)

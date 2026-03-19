@@ -22,6 +22,6 @@ The model has zero institutional knowledge. Every conversation starts fresh with
 )
 ```
 
-**Why it matters:** Small, measured refinements to tool descriptions have shown large accuracy gains. Anthropic's Claude Sonnet 3.5 saw significant SWE-bench score improvements from description quality alone.
+**Why it matters:** Small, measured refinements to tool descriptions have shown large accuracy gains. Anthropic's Claude Sonnet 3.5 saw significant SWE-bench score improvements, with description quality contributing as one of several factors.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents" (Sep 2025); modelcontextprotocol.info/docs/tutorials/writing-effective-tools/
+**Source:** [Anthropic — Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [Anthropic — SWE-bench Sonnet](https://www.anthropic.com/engineering/swe-bench-sonnet)

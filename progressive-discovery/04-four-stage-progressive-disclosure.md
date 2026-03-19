@@ -45,4 +45,4 @@ def handle_discovery(stage, **kwargs):
 
 **Best for:** Multi-tenant SaaS where each tenant enables different integrations. The agent discovers what's available for THIS user, not all possible tools.
 
-**Source:** Klavis AI - "Less is More: 4 design patterns"; Speakeasy blog progressive discovery benchmarks
+**Source:** [Klavis AI — Less is More](https://www.klavis.ai/blog/less-is-more-mcp-design-patterns-for-ai-agents); [Speakeasy progressive discovery benchmarks](https://www.speakeasy.com/blog/100x-token-reduction-dynamic-toolsets)

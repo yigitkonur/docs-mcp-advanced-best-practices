@@ -42,4 +42,4 @@ format_error(
 
 **Why it matters:** If a model gets the tool call right 90%+ of the time, and can self-correct from a good error message the other 10%, you don't need exhaustive descriptions covering every edge case upfront. Errors handle the long tail.
 
-**Source:** u/sjoti r/mcp (279 upvotes) - "The Supabase MCP... its response is `{"error": "Unauthorized"}`, which is technically correct but completely unhelpful."
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) (280 upvotes) — "The Supabase MCP... its response is `{"error": "Unauthorized"}`, which is technically correct but completely unhelpful."

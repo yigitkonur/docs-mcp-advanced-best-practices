@@ -2,7 +2,7 @@
 
 Return errors in a structured, machine-readable format with a fixed taxonomy so the LLM can programmatically decide whether to retry, switch tools, escalate, or stop — rather than parsing free-text error messages.
 
-The SERF framework (Structured Error Response Format) was proposed in arXiv:2603.13417 as a standard for agentic error handling. Its core insight: an agent that reads `"retryable": true, "retry_after_ms": 2000` can act on it reliably. An agent that reads "Please try again in a moment" must interpret natural language under uncertainty.
+The SERF framework (Structured Error Recovery Framework) was proposed in arXiv:2603.13417 ("Bridging Protocol and Production: Design Patterns for Deploying AI Agents with Model Context Protocol", Srinivasan, 2026) as a standard for agentic error handling. Its core insight: an agent that reads `"retryable": true, "retry_after_ms": 2000` can act on it reliably. An agent that reads "Please try again in a moment" must interpret natural language under uncertainty.
 
 ## SERF Error Structure
 
@@ -53,4 +53,4 @@ Document in your server's README:
 
 **Why it matters:** LLMs retry errors inconsistently when errors are natural-language prose. SERF gives agents deterministic retry logic, preventing both premature give-ups and infinite retry loops.
 
-**Source:** arXiv:2603.13417 "SERF: A Structured Error Response Format for LLM Tool Invocation" (2025); discussion in r/MachineLearning.
+**Source:** [arXiv:2603.13417](https://arxiv.org/abs/2603.13417) — "Bridging Protocol and Production" (Srinivasan, 2026)

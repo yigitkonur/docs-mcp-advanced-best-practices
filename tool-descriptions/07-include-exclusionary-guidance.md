@@ -31,4 +31,4 @@ Without exclusionary hints, models tend to default to the "biggest" tool — the
 
 **Why it matters:** Exclusionary guidance acts as a routing table. Without it, tools with overlapping scope create ambiguity, and ambiguity means the model guesses — often wrong.
 
-**Source:** u/Ok-Birthday-5406, r/mcp; Figma MCP server parameter descriptions
+**Source:** [u/Ok-Birthday-5406 on r/mcp](https://reddit.com/r/mcp); [Figma MCP server](https://github.com/nicholasblexrud/figma-mcp-server) parameter descriptions

@@ -3,8 +3,8 @@
 Kill-restart cycles during MCP server development are slow and break your flow. FastMCP supports automatic file watching and server restart.
 
 ```bash
-# Auto-restarts on file changes
-fastmcp dev server.py
+# Auto-restarts on file changes and opens MCP Inspector
+fastmcp dev inspector server.py
 ```
 
 **What this gives you:**
@@ -15,7 +15,7 @@ fastmcp dev server.py
 
 **Development workflow:**
 ```
-1. Start:     fastmcp dev server.py
+1. Start:     fastmcp dev inspector server.py
 2. Open:      MCP Inspector at http://localhost:5173
 3. Edit:      Modify tool descriptions, add parameters, fix bugs
 4. Automatic: Server restarts, Inspector reconnects
@@ -43,4 +43,4 @@ result = add(2, 3)
 await client.call_tool("add", {"a": 2, "b": 3})
 ```
 
-**Source:** FastMCP 3.0 blog (jlowin.dev/blog/fastmcp-3); NearForm - "Implementing MCP: Tips, tricks and pitfalls"
+**Source:** [FastMCP 3.0 — What's New](https://jlowin.dev/blog/fastmcp-3); [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/)

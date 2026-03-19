@@ -33,4 +33,4 @@ def search_activity(
 
 **Anti-pattern:** Accepting `str` for everything and hoping the model sends valid values. This leads to silent failures or vague errors deep in business logic.
 
-**Source:** NearForm - "Implementing MCP: Tips, tricks and pitfalls"; modelcontextprotocol.info best practices
+**Source:** [NearForm — Implementing MCP: Tips, tricks and pitfalls](https://www.nearform.com/digital-community/implementing-mcp-tips-tricks-and-pitfalls/); [MCP best practices](https://modelcontextprotocol.info/docs/best-practices/)

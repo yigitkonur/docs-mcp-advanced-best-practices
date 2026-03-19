@@ -51,4 +51,4 @@ server.registerTool("query_users", {
 
 **When TSV breaks down:** Nested objects, arrays within cells, or values containing tabs/newlines. For those, fall back to YAML or JSON. But for the vast majority of database results and list outputs, TSV is the right default.
 
-**Source:** pgEdge, "Lessons Learned Writing an MCP Server for PostgreSQL" — discovered significant token savings switching query results from JSON to TSV.
+**Source:** [pgEdge — Lessons Learned Writing an MCP Server for PostgreSQL](https://www.pgedge.com/blog/lessons-learned-writing-an-mcp-server-for-postgresql) — discovered significant token savings switching query results from JSON to TSV

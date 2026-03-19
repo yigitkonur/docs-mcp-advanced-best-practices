@@ -3,42 +3,27 @@
 When a tool call will take more than a few seconds, return a task ID immediately and let the model poll for results. This prevents blocking the conversation and avoids timeouts.
 
 ```python
-@mcp.tool
-async def generate_report(ctx: Context, data_id: str) -> dict:
-    """Generate a comprehensive data report. Returns immediately with a task ID.
-    Use check_task_status(task_id) to poll for completion."""
-    task_id = await ctx.start_background_task("report_worker", data_id=data_id)
+from fastmcp import FastMCP
+from fastmcp.server.tasks import TaskConfig
+
+mcp = FastMCP("Report Server")
+
+@mcp.tool(task=True)  # Decorator-based API — runs as a background task
+async def generate_report(data_id: str) -> dict:
+    """Generate a comprehensive data report.
+    Runs as a background task — returns a task ID immediately.
+    Use the task status endpoint to poll for completion."""
+    # Long-running work happens here; FastMCP handles the task lifecycle
+    report = await build_report(data_id)
     return {
-        "status": "queued",
-        "task_id": task_id,
-        "message": (
-            f"Report generation started for data '{data_id}'. "
-            f"Use check_task_status(task_id='{task_id}') to check progress. "
-            f"Typical completion time: 30-60 seconds."
-        )
+        "status": "completed",
+        "result": report,
+        "message": f"Report for '{data_id}' is ready."
     }
 
-@mcp.tool
-async def check_task_status(task_id: str) -> dict:
-    """Check the status of a background task."""
-    task = await get_task(task_id)
-    if task.status == "completed":
-        return {
-            "status": "completed",
-            "result": task.result,
-            "message": "Report is ready."
-        }
-    elif task.status == "failed":
-        return {
-            "content": [{"type": "text", "text": f"Task failed: {task.error}"}],
-            "isError": True
-        }
-    else:
-        return {
-            "status": "in_progress",
-            "progress": f"{task.percent_complete}%",
-            "message": f"Still processing ({task.percent_complete}% complete). Check again in 10 seconds."
-        }
+# For more control, use TaskConfig:
+# @mcp.tool(task=TaskConfig(mode="required"))
+# async def heavy_analysis(data_id: str) -> dict: ...
 ```
 
 **Why this matters:**
@@ -48,8 +33,8 @@ async def check_task_status(task_id: str) -> dict:
 - Progress updates keep the user informed
 
 **Implementation options:**
-- FastMCP's `ctx.start_background_task()` (SEP-1686 / Docket integration)
+- FastMCP's `@mcp.tool(task=True)` decorator or `@mcp.tool(task=TaskConfig(mode="required"))` for fine-grained control
 - Simple async queue with Redis/SQLite backing
 - Thread pool for CPU-bound work
 
-**Source:** FastMCP 3.0 blog - SEP-1686 and Docket integration; modelcontextprotocol.info best practices - AsyncTaskQueue pattern
+**Source:** [FastMCP tasks docs](https://gofastmcp.com/servers/tasks); [FastMCP 3.0 — What's New](https://www.jlowin.dev/blog/fastmcp-3-whats-new)

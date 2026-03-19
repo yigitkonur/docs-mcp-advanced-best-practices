@@ -88,4 +88,4 @@ server.use(async (req, next) => {
 
 **Why it matters:** A centralized policy gateway decouples authorization logic from tool handlers, allows policy changes without code deployments, and provides a tamper-evident audit trail for all tool invocations.
 
-**Source:** Stacklok policy gateway pattern; zero-trust design principles for LLM tool execution; dynamic-tools-patterns research file §6.
+**Source:** [Stacklok](https://stacklok.com) policy gateway pattern; zero-trust design principles for LLM tool execution

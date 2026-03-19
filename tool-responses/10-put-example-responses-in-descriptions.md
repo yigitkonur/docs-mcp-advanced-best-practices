@@ -50,4 +50,4 @@ Use "page" param to paginate. Pass user "id" values to get_user_details.`,
 
 **This is not pretty, but it works.** The description gets long, and purists will object. But in practice, agents that see example responses make fewer errors and fewer exploratory calls. The token cost of a slightly longer description is far less than the cost of a wasted tool round-trip.
 
-**Source:** u/gauthierpia, r/AI_Agents — reported significant reduction in wasted tool calls after adding example responses to descriptions.
+**Source:** [u/gauthierpia on r/AI_Agents](https://reddit.com/r/AI_Agents) — reported significant reduction in wasted tool calls after adding example responses to descriptions

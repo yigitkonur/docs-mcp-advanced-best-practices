@@ -39,4 +39,4 @@ def search_contacts(query: str, limit: int = 10):
 
 **Caveat:** Don't take this too far. Core usage patterns should be in the description. Only edge cases and rare failure modes belong in error messages.
 
-**Source:** u/sjoti r/mcp thread; u/Nako_A1 r/mcp - "MCP Server Design Question: How to Handle Complex APIs?" - solution #6 "error-driven learning"
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/); [u/Nako_A1 on r/mcp](https://reddit.com/r/mcp/comments/1npfoo9/) — error-driven learning (solution #6)

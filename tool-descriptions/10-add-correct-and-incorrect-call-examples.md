@@ -1,6 +1,6 @@
 # Add Correct AND Incorrect Call Examples in Descriptions
 
-Including concrete examples in tool descriptions — both happy-path and common mistakes — measurably improves task completion. Even minor wording changes in descriptions can shift success rates by 25-35%. A well-placed example eliminates an entire class of misuse.
+Including concrete examples in tool descriptions — both happy-path and common mistakes — measurably improves task completion. A well-placed example eliminates an entire class of misuse.
 
 Keep it to one correct example and one edge case or mistake. More than that bloats the prompt without proportional benefit.
 
@@ -24,4 +24,4 @@ The example response is equally valuable. When agents see the shape of the outpu
 
 **Why it matters:** Models learn calling conventions from examples faster than from prose. A single concrete example outperforms a paragraph of rules — and including a wrong example inoculates against the most frequent failure mode.
 
-**Source:** Anthropic, "Writing Tools for Agents" (25-35% improvement stat); u/gauthierpia, r/AI_Agents; u/GentoroAI, r/mcp
+**Source:** [Anthropic — Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [u/gauthierpia on r/AI_Agents](https://reddit.com/r/AI_Agents) — significant reduction in wasted tool calls; [u/GentoroAI on r/mcp](https://reddit.com/r/mcp/comments/1ooqeqy/)

@@ -46,4 +46,4 @@ def terminate_instance(instance_id: str):
 
 **Key principle:** Include the actual parameter values the model should use, not just the tool name. Don't make the model figure out what arguments to pass - spell them out.
 
-**Source:** alpic.ai/blog - "Better MCP tool call error responses: help your AI recover gracefully"
+**Source:** [alpic.ai — Better MCP tool call error responses](https://alpic.ai/blog/better-mcp-tool-call-error-responses-ai-recover-gracefully)

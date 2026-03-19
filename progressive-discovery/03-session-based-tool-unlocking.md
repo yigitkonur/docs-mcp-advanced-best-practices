@@ -41,4 +41,4 @@ async def unlock_admin_mode(ctx: Context):
 - Session state tracks what each user has unlocked
 - The unlock tool's response should list what was just made available
 
-**Source:** FastMCP 3.0 blog (jlowin.dev/blog/fastmcp-3); deep research on progressive disclosure patterns
+**Source:** [FastMCP 3.0 blog](https://jlowin.dev/blog/fastmcp-3); [FastMCP visibility docs](https://gofastmcp.com/servers/visibility)

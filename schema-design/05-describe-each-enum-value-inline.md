@@ -2,15 +2,7 @@
 
 Don't just list enum values — explain what each one means in the `.describe()` text. The LLM gets semantics, not just labels.
 
-## Measured Impact
-
-| Enum Strategy              | Valid Call Rate |
-|----------------------------|---------------|
-| Free-form string (no enum) | 60–70%        |
-| Enum values only           | ~95%          |
-| Enum + inline descriptions | 97%+          |
-
-Enums alone are a massive improvement. Adding inline descriptions of each value pushes accuracy even higher and reduces cases where the model picks the wrong value.
+Using enums with inline descriptions significantly improves valid call rates compared to free-form strings. Enums alone are a massive improvement. Adding inline descriptions of each value pushes accuracy even higher and reduces cases where the model picks the wrong value.
 
 ## Bad: Enum Without Context
 
@@ -50,4 +42,4 @@ format: z.enum(["json", "csv", "markdown"]).describe(
 
 ---
 
-**Source:** `exa-labs/exa-mcp-server`; GitHub findings; deep research
+**Source:** [exa-labs/exa-mcp-server](https://github.com/exa-labs/exa-mcp-server); community best practices from [r/mcp](https://reddit.com/r/mcp)

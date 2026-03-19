@@ -2,20 +2,12 @@
 
 LLMs express the same concept in many formats. Don't force a specific one in the schema — accept a loose string and parse it yourself.
 
-## Measured Impact
-
-| Input Strategy          | Accuracy |
-|-------------------------|----------|
-| Single flexible string  | ~92%     |
-| Union types (`anyOf`)   | ~75%     |
-| Strict format only      | ~80%     |
-
-Union types (`z.union()`, `anyOf` in JSON Schema) are especially problematic — LLMs mishandle them roughly 30% of the time, often picking the wrong branch or producing malformed hybrid output.
+Community experience shows flexible string inputs achieve higher accuracy than union types (`anyOf`), which LLMs frequently mishandle. Union types (`z.union()`, `anyOf` in JSON Schema) are especially problematic — LLMs often pick the wrong branch or produce malformed hybrid output.
 
 ## Bad: Union Type for Dates
 
 ```typescript
-// ❌ LLMs mishandle union types ~30% of the time
+// ❌ LLMs frequently mishandle union types
 date: z.union([
   z.string().datetime(),
   z.number().describe("Unix timestamp"),
@@ -26,7 +18,7 @@ date: z.union([
 ## Good: Flexible String, Server-Side Parsing
 
 ```typescript
-// ✅ 92% accuracy — let the LLM express naturally
+// ✅ Higher accuracy — let the LLM express naturally
 date: z.string().describe(
   "Date in any format: ISO 8601, Unix timestamp, or relative ('yesterday', 'last week')"
 )
@@ -52,4 +44,4 @@ async function handler({ date }: { date: string }) {
 
 ---
 
-**Source:** Deep research; Arcade.dev "54 MCP Tool Patterns"
+**Source:** Community patterns from [r/mcp](https://reddit.com/r/mcp); production experience with union type failures

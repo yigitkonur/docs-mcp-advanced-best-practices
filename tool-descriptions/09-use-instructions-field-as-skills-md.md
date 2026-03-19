@@ -33,4 +33,4 @@ Treat this like a `skills.md` or `AGENTS.md` — a briefing document the agent r
 
 **Why it matters:** Individual tool descriptions tell the model what each tool does. The `instructions` field tells the model how the tools fit together. Without it, agents discover workflows by trial and error — burning tokens and making avoidable mistakes.
 
-**Source:** u/hasmcp, r/mcp; MotherDuck blog (returns `mcp_server_instructions.md` with full usage guidance via this field)
+**Source:** [MCP specification — instructions field](https://modelcontextprotocol.io/specification/2025-11-25); [MotherDuck dev diary](https://motherduck.com/blog/dev-diary-building-mcp/); [u/hasmcp on r/mcp](https://reddit.com/r/mcp)

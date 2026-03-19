@@ -42,4 +42,4 @@ server.registerResource(
 
 **When to use tools instead:** When the "read" has parameters beyond a URI path (complex filters, pagination, sorting).
 
-**Source:** MCP blog - "MCP Prompts: Building Workflow Automation"; MCP specification on resource templates
+**Source:** [MCP specification — resources](https://modelcontextprotocol.io/specification/2025-11-25/server/resources); [modelcontextprotocol.io](https://modelcontextprotocol.io) resource templates documentation

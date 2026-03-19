@@ -43,4 +43,4 @@ function enableTool(active: string[], model: string, name: string): boolean {
 
 **Why it matters:** Every tool past the model's sweet spot adds token cost and degrades routing accuracy — tool roster hygiene is a first-class correctness concern, not just an optimisation.
 
-**Source:** r/mcp u/Rotemy-x10 (271 upvotes); u/Brief-Horse-454 community consensus; OpenAI function-calling docs (max 20 tools recommendation); Claude model card context notes.
+**Source:** [u/Rotemy-x10 on r/mcp](https://reddit.com/r/mcp) (271 upvotes); [u/Brief-Horse-454 on r/mcp](https://reddit.com/r/mcp); [OpenAI function-calling docs](https://platform.openai.com/docs/guides/function-calling) (max 20 tools recommendation); Claude model card context notes

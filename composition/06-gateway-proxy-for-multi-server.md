@@ -2,7 +2,7 @@
 
 Running multiple MCP servers creates real operational problems: tool name collisions, resource waste from idle servers, no unified discovery, and cascading failures when one server goes down. A gateway proxy solves all of these by sitting between the client and your server fleet.
 
-**What a gateway handles:** server-prefixed naming (`web___search`, `db___query`) to avoid collisions, on-demand server lifecycle, circuit breaking for unreachable servers, and unified `tools/list` across all servers.
+**What a gateway handles:** server-prefixed naming (`web__search`, `db__query`) to avoid collisions, on-demand server lifecycle, circuit breaking for unreachable servers, and unified `tools/list` across all servers.
 
 ```typescript
 // Gateway configuration — declare servers, let the gateway manage lifecycle
@@ -25,7 +25,7 @@ const gateway = new MCPGateway({
       maxRetries: 3  // circuit breaker after 3 failures
     }
   ],
-  naming: 'prefixed'  // web___search, db___query — prevents collisions
+  naming: 'prefixed'  // web__search, db__query — prevents collisions
 });
 
 // Client sees one server with all tools
@@ -34,7 +34,7 @@ await gateway.start();
 
 **Existing solutions:**
 - **MCPJungle** — Multi-server management with prefixed naming and health checks
-- **MCPX** — Dynamic server allocation with ephemeral containers
+- **MCPX** — Discovery and installation tool for MCP servers
 - **MetaMCP** — Control plane for managing MCP server fleets
 
 **When you need this:**
@@ -45,4 +45,4 @@ await gateway.start();
 
 **When you don't:** If you have 1-2 servers with no name conflicts, direct connections are simpler. Don't add a gateway for the sake of architecture.
 
-> **Source:** u/Rotemy-x10, r/mcp (269 upvotes) on gateway patterns; u/EconomicsDangerous44, r/mcp on multi-server orchestration; community discussion of MCPJungle, MCPX, and MetaMCP.
+> **Source:** [MCPJungle](https://github.com/mcpjungle/MCPJungle); [MetaMCP](https://metamcp.com); u/Rotemy-x10 on [r/mcp](https://reddit.com/r/mcp)

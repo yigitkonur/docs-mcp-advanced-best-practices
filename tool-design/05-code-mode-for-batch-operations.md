@@ -51,4 +51,4 @@ return {"status": "success", "total": len(all_leads), "s3_url": s3_url}
 
 **When to use:** Batch exports, heavy pagination, custom analytics, file transformations - anywhere the final output is a file/URL rather than a conversational response.
 
-**Source:** Klavis AI - "Less is More: 4 design patterns for building better MCP servers"
+**Source:** [Klavis AI — Less is More: MCP Design Patterns for AI Agents](https://www.klavis.ai/blog/less-is-more-mcp-design-patterns-for-ai-agents)

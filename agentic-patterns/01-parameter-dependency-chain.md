@@ -43,4 +43,4 @@ A description saying "call run_tests before deploy" relies on the model reading 
 
 **Why it matters:** Agentic workflows that modify production systems need hard ordering guarantees. Structural dependency chains are the only reliable way to enforce them across all LLMs.
 
-**Source:** r/mcp thread on agentic safety patterns (u/CARUFO); modelcontextprotocol.io spec — tool design guidance; steering-patterns research synthesis.
+**Source:** [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) — tool design guidance; community patterns from [r/mcp](https://reddit.com/r/mcp)

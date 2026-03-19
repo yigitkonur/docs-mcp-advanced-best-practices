@@ -43,4 +43,4 @@ npx promptfoo@latest view  # opens comparison dashboard
 
 **Cross-model gotchas:** Claude is conservative (asks before calling), GPT hallucinates param values, smaller models (Llama, Mistral) struggle with >10 tools. Run evals in CI — a tweak that helps Claude can break Llama.
 
-**Source:** u/AchillesDev, r/mcp; Anthropic "Writing Tools for Agents"
+**Source:** [u/AchillesDev on r/mcp](https://reddit.com/r/mcp); [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [PromptFoo MCP integration](https://www.promptfoo.dev/docs/integrations/mcp/)

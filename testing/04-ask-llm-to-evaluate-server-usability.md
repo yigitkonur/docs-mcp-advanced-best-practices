@@ -38,4 +38,4 @@ Which description would help you use this tool more effectively? Why?
 
 **Key insight:** The model won't complain unprompted — it adapts silently. You have to explicitly ask for critique. Treat it like a user interview, not a bug report.
 
-**Source:** u/jimmiebfulton, r/mcp (260 upvotes thread); u/jbr, r/mcp
+**Source:** [u/jimmiebfulton on r/mcp](https://reddit.com/r/mcp) (260 upvotes thread); [u/jbr on r/mcp](https://reddit.com/r/mcp)

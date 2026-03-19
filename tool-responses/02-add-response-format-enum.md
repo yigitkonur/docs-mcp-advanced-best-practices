@@ -38,4 +38,4 @@ def get_customer(customer_id: str, response_format: ResponseFormat = ResponseFor
 
 This avoids creating two separate tools for the same data, keeping the tool count low.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [modelcontextprotocol.io — writing effective tools](https://modelcontextprotocol.io)

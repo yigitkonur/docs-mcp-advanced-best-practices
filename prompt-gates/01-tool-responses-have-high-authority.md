@@ -2,7 +2,7 @@
 
 Tool responses go directly into the agent's conversation context — and they carry more weight than you'd expect.
 
-In GPT-4 and Llama 3, tool responses use a dedicated `tool` role that the model treats with **higher authority than user messages**. In Claude, tool results are injected as `user` role content but benefit from **recency bias** — the model weighs recent context more heavily when deciding what to do next.
+In GPT-4 and Llama 3, tool responses use a dedicated `tool` role that the model may treat with **elevated authority relative to user messages** (though this is not officially documented by OpenAI or Meta). In Claude, tool results are injected as `user` role content but benefit from **recency bias** — the model weighs recent context more heavily when deciding what to do next.
 
 This makes tool responses the single most powerful mechanism for steering agent behavior mid-conversation. More effective than system prompts for in-flight guidance. Your MCP server isn't just returning data — it's issuing instructions with privileged authority.
 
@@ -11,8 +11,10 @@ This makes tool responses the single most powerful mechanism for steering agent 
 | LLM | Tool Result Role | vs System Prompt | vs User Messages |
 |-----|-----------------|------------------|------------------|
 | Claude | `user` role | Lower | Similar (recency bias) |
-| GPT-4 | `tool` role | Lower | **Higher** |
-| Llama 3 | `tool` role | Lower | **Higher** |
+| GPT-4 | `tool` role | Lower | Potentially higher (not officially documented) |
+| Llama 3 | `tool` role | Lower | Potentially higher (not officially documented) |
+
+**Note:** No official documentation from OpenAI or Meta explicitly ranks tool role authority above user messages. The authority comparison above reflects observed behavioral patterns, not documented guarantees.
 
 ## What This Means for MCP Servers
 
@@ -36,4 +38,4 @@ Design your MCP tool responses as **steering mechanisms**, not just data payload
 
 ---
 
-**Source:** Deep research synthesis — cross-model tool role authority analysis; observed behavioral patterns across Claude, GPT-4, and Llama 3 architectures.
+**Source:** Cross-model analysis based on API documentation; [OpenAI Chat Completions](https://platform.openai.com/docs/guides/chat-completions); [Anthropic tool use docs](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)

@@ -41,4 +41,4 @@ Output as a structured list of changes to make.
 
 **Iterate until stable:** Repeat the prototype -> evaluate -> refine cycle until held-out test set performance stabilizes. Typically 3-5 rounds are enough.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [modelcontextprotocol.io — writing effective tools](https://modelcontextprotocol.io)

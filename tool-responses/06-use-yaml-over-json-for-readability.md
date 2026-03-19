@@ -50,4 +50,4 @@ server.registerTool("get_design_tokens", {
 
 **When to stick with JSON:** When the response will be piped into another tool that expects JSON input, or when the agent explicitly requests it. Let the agent decide — just make YAML the default.
 
-**Source:** GLips/Figma-Context-MCP (defaults to YAML for all design data responses); community findings on token efficiency of serialization formats.
+**Source:** [Figma-Context-MCP](https://github.com/GLips/Figma-Context-MCP) (defaults to YAML for all design data responses); community findings on token efficiency of serialization formats

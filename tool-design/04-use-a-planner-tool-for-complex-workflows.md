@@ -28,4 +28,4 @@ def create_plan(task_description: str) -> dict:
 - The order of operations matters
 - New users (or models) can't intuit the correct sequence
 
-**Source:** u/Biggie_2018 r/mcp - McKinsey vizro-mcp project; u/sjoti r/mcp thread
+**Source:** [u/Biggie_2018 on r/mcp](https://reddit.com/r/mcp) — McKinsey [vizro-mcp project](https://github.com/mckinsey/vizro); [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/)

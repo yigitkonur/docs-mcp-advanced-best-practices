@@ -32,4 +32,4 @@ def search_contacts(query: str) -> dict:
 
 **Important nuance:** Not all clients automatically fetch resources. Some (like Goose) do; others may need the model to explicitly request it. Test with your target client.
 
-**Source:** u/kiedi5 r/mcp - "Does anyone use MCP prompts or resources?" thread; u/emicklei confirmed the pattern works with syntax error recovery
+**Source:** [u/kiedi5 on r/mcp](https://reddit.com/r/mcp) — "Does anyone use MCP prompts or resources?" thread; u/emicklei confirmed the pattern works with syntax error recovery

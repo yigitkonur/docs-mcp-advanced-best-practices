@@ -49,4 +49,4 @@ function truncateWithSignal(text: string, maxChars = 8000): string {
 
 **Why it matters:** Pagination without a summary forces extra turns; truncation without a signal causes silent data loss; hybrid gives the model full agency over whether to pay the cost of fetching more.
 
-**Source:** Production patterns from LlamaIndex, Anthropic tool-use best practices docs, and r/mcp community discussion on large-result tool design.
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [r/mcp](https://reddit.com/r/mcp) community discussion on large-result tool design

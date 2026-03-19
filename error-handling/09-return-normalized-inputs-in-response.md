@@ -51,4 +51,4 @@ def resolve_date(raw: str) -> datetime:
 
 **The principle:** Every response is a training signal. Return the canonical form of what you understood, and the agent converges on clean inputs fast.
 
-**Source:** Arcade.dev, "54 MCP Tool Patterns"; deep research synthesis on agent learning from tool feedback
+**Source:** Parameter coercion patterns from production MCP servers; community patterns from [r/mcp](https://reddit.com/r/mcp)

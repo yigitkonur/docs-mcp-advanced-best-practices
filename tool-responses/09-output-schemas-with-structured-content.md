@@ -44,4 +44,4 @@ server.registerTool("get_weather", {
 
 **Common mistake:** Declaring an output schema during development, then forgetting to populate `structuredContent`. The SDK will throw a validation error at runtime. If you're not ready to commit to a schema, don't declare one — add it when the response shape stabilizes.
 
-**Source:** modelcontextprotocol/typescript-sdk (output schema validation logic); modelcontextprotocol/servers — memory and everything server implementations.
+**Source:** [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) (output schema validation logic); [MCP specification — tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)

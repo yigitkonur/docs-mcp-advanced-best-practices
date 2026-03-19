@@ -48,4 +48,4 @@ server.tool("query_metrics", schema, async (params) => {
 
 **For high-frequency tools**, use a lazy singleton pattern: initialize the connection on first use, cache it, and handle reconnection inside the tool if it goes stale.
 
-**Source:** Docker Blog — "MCP Server Best Practices"
+**Source:** [Docker Blog — MCP Server Best Practices](https://www.docker.com/blog/mcp-server-best-practices/)

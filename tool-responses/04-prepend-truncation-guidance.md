@@ -33,4 +33,4 @@ def search_logs(query: str, limit: int = 50) -> dict:
 
 **Anti-pattern:** Silently returning the first N results with no indication that more exist. The model will assume the returned data is complete and draw incorrect conclusions.
 
-**Source:** Anthropic Engineering Blog - "Writing effective tools for AI agents"; modelcontextprotocol.info writing effective tools tutorial
+**Source:** [Anthropic — Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents); [modelcontextprotocol.io — writing effective tools](https://modelcontextprotocol.io)

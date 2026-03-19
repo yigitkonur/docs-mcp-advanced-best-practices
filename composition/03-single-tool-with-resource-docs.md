@@ -36,4 +36,4 @@ def get_parameter_docs(client: str, method: str, parameter: str) -> str:
 
 **Trade-off:** Requires clients that support resource reading. Not all do. Test with your target client.
 
-**Source:** u/Dipseth r/mcp - "I am using 1 tool that has 3 arguments... using prance to wrap an open API spec"
+**Source:** u/Dipseth on [r/mcp](https://reddit.com/r/mcp) — "I am using 1 tool that has 3 arguments... using prance to wrap an open API spec"

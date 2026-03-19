@@ -41,4 +41,4 @@ def manage_user(
 
 **Why it matters:** Tool count directly impacts model accuracy. With 30+ tools, models frequently pick the wrong tool or hallucinate parameters. The combined pattern keeps tool count manageable while preserving full CRUD functionality. But don't over-consolidate — if a user needs to approve deletes but not reads, separate tools give you that control.
 
-**Source:** Reddit community consensus, r/mcp; Workato MCP documentation — "CRUD tool design patterns"
+**Source:** [r/mcp](https://reddit.com/r/mcp) community consensus; [Klavis AI — Less is More: MCP Design Patterns for AI Agents](https://www.klavis.ai/blog/less-is-more-mcp-design-patterns-for-ai-agents)

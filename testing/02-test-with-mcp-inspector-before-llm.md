@@ -33,4 +33,4 @@ Start from layer 1 and only involve the LLM (layer 3) after layers 1-2 pass. Thi
 
 **Non-obvious tip:** Temporarily disable all but one tool to see if an issue persists. This isolates whether the problem is tool-specific or systemic.
 
-**Source:** Stainless - "Error Handling And Debugging MCP Servers"; NearForm - "Implementing MCP: Tips, tricks and pitfalls"
+**Source:** [Stainless — Error Handling And Debugging MCP Servers](https://www.stainless.com/mcp/error-handling-and-debugging-mcp-servers); [NearForm — Implementing MCP](https://nearform.com/digital-community/implementing-model-context-protocol-mcp-tips-tricks-and-pitfalls/); [MCP Inspector](https://www.npmjs.com/package/@modelcontextprotocol/inspector)

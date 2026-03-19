@@ -31,4 +31,4 @@ def get_user_data(user_id: str, ctx: Context):
 
 **Why it matters:** This is the strongest defense against prompt injection. Even if an attacker tricks the model into calling tools maliciously, the damage is limited to what that specific user can already access.
 
-**Source:** u/cake97 r/mcp - "We use delegated permissions via entra. Relies on the underlying RBAC in place from the app."; Christian Schneider - "Securing MCP: a defense-first architecture guide"
+**Source:** [u/cake97 on r/mcp](https://reddit.com/r/mcp) — "We use delegated permissions via entra."; [Christian Schneider — Securing MCP: a defense-first architecture guide](https://christian-schneider.net/blog/securing-mcp-defense-first-architecture/)

@@ -44,4 +44,4 @@ function buildStateResponse(state: string, data: any,
 
 ---
 
-**Source:** u/Biggie_2018, r/mcp — "flattening the agent back into the model"; deep research synthesis.
+**Source:** u/Biggie_2018 on [r/mcp](https://reddit.com/r/mcp) — "flattening the agent back into the model"

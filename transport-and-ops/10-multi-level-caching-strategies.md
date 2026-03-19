@@ -80,4 +80,4 @@ const key = `github:issues:${owner}/${repo}:${etag}`;
 
 **Why it matters:** Agentic loops repeatedly call the same tools with identical params. Without caching, a 10-step agent workflow that queries file listings on each step can generate 10× the upstream API calls needed.
 
-**Source:** Advanced MCP patterns research file; r/mcp discussion on GitHub MCP server rate limit mitigation.
+**Source:** [r/mcp](https://reddit.com/r/mcp) discussion on GitHub MCP server rate limit mitigation; [Docker Blog — MCP Server Best Practices](https://www.docker.com/blog/mcp-server-best-practices/)

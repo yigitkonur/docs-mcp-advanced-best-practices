@@ -1,6 +1,6 @@
 # Over-Verbose Descriptions Reduce Tool Call Rate
 
-Tool descriptions over ~200 tokens cause LLMs to call the tool less often, not more. Community evals show a **30–50% reduction in tool invocation rate** when descriptions exceed this threshold — even when the tool is the correct one to use.
+Tool descriptions over ~200 tokens cause LLMs to call the tool less often, not more. Community evaluations show over-verbose descriptions can significantly reduce tool invocation rates — even when the tool is the correct one to use.
 
 The hypothesis: over-long descriptions compete with the model's generative attention. When a description is long enough to read like a mini-essay, the model sometimes "answers" the question using the description's text instead of calling the tool.
 
@@ -47,4 +47,4 @@ Move parameter-level guidance into the `description` field of individual paramet
 
 **Why it matters:** A 400-token description costs more in tokens AND gets called less often. The optimal tool description is short enough to scan and specific enough to select.
 
-**Source:** Community eval results shared in r/mcp (u/Rotemy-x10, 271-upvote thread on tool selection accuracy); Anthropic prompt engineering guide on tool use.
+**Source:** Community evaluations on tool selection accuracy from [r/mcp](https://reddit.com/r/mcp); [Anthropic prompt engineering guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)

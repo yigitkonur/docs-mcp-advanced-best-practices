@@ -56,4 +56,4 @@ server.tool("get_deployment", "Get deployment status", {
 
 **Why it matters:** Without HATEOAS, agents frequently call tools in invalid states and must parse error messages to understand what went wrong. With it, valid transitions are self-evident from the data.
 
-**Source:** REST HATEOAS principle adapted for LLM tools; referenced in IBM Context Forge documentation and r/mcp discussions on "self-documenting APIs for agents."
+**Source:** REST HATEOAS principle adapted for LLM tools; [Nordic APIs — "HATEOAS: The API Design Style That Was Waiting for AI"](https://nordicapis.com/hateoas-the-api-design-style-that-was-waiting-for-ai/); community discussions on [r/mcp](https://reddit.com/r/mcp)

@@ -54,4 +54,4 @@ mcp.add_transform(RenameTransform({"old_name": "new_name"}))
 
 This replaces ad-hoc glue code with declarative primitives.
 
-**Source:** FastMCP 3.0 blog (jlowin.dev/blog/fastmcp-3)
+**Source:** [FastMCP 3.0 blog](https://jlowin.dev/blog/fastmcp-3)

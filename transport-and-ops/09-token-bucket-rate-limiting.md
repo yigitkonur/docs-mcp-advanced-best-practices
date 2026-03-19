@@ -79,4 +79,4 @@ function withRateLimit(category: string, handler: Function) {
 
 **Why it matters:** Flat global limits either over-restrict cheap reads or under-protect expensive AI calls. Categorical buckets let you tune each independently and surface informative retry-after values to the agent.
 
-**Source:** Advanced MCP patterns research; community discussion on r/mcp regarding production server throttling.
+**Source:** [r/mcp](https://reddit.com/r/mcp) community discussion on production server throttling; [Docker Blog — MCP Server Best Practices](https://www.docker.com/blog/mcp-server-best-practices/)

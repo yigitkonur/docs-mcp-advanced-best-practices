@@ -51,4 +51,4 @@ def format_tool_response(data: dict, instructions: str, next_action: str = None)
 
 ---
 
-**Source:** Deep research synthesis; community patterns from MCP server implementations.
+**Source:** [Anthropic prompt engineering — XML tags](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags); community patterns from MCP server implementations on [r/mcp](https://reddit.com/r/mcp)

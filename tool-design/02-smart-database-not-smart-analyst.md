@@ -40,4 +40,4 @@ def get_threat_framework(app_description: str):
 
 **Why it matters:** The LLM is better at semantic analysis than your keyword matcher. Your server is better at data retrieval and structured output than the LLM. Play to each side's strengths.
 
-**Source:** Matt Adams - "MCP Server Design Principles" (matt-adams.co.uk)
+**Source:** [Matt Adams — MCP Server Design Principles](https://matt-adams.co.uk/2025/08/30/mcp-design-principles.html)

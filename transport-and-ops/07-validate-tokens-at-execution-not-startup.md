@@ -49,4 +49,4 @@ async def search_tickets(query: str) -> list[TextContent]:
 
 **Same principle applies to:** API keys, OAuth tokens, service account credentials, SSL certs.
 
-**Source:** Docker Blog — "MCP Server Best Practices"
+**Source:** [Docker Blog — MCP Server Best Practices](https://www.docker.com/blog/mcp-server-best-practices/)

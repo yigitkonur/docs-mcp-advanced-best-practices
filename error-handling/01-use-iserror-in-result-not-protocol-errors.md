@@ -34,4 +34,4 @@ MCP has two error paths - and picking the wrong one is a common mistake that kil
 
 **Why it matters:** When you throw a protocol-level error for a business failure, the LLM never sees the error message. It gets a generic "tool call failed" and has no information to fix the problem. With `isError: true`, the error text becomes part of the conversation and the model can adjust its approach.
 
-**Source:** alpic.ai/blog - "Better MCP tool call error responses"; MCP specification - Tools section (modelcontextprotocol.io)
+**Source:** [alpic.ai — Better MCP tool call error responses](https://alpic.ai/blog/better-mcp-tool-call-error-responses-ai-recover-gracefully); [MCP specification — Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)

@@ -62,4 +62,4 @@ Each agent should `read_log` at session start to understand what others have don
 
 **Why it matters:** Multi-agent pipelines that use simple shared variables inevitably produce race conditions. The append-only log pattern makes agent coordination safe without requiring locks or transactions.
 
-**Source:** Multi-agent coordination patterns in r/mcp; IBM Context Forge multi-agent architecture docs; steering-patterns research file §5.
+**Source:** Multi-agent coordination patterns from [r/mcp](https://reddit.com/r/mcp) and [r/AI_Agents](https://reddit.com/r/AI_Agents); event sourcing principles applied to agent coordination

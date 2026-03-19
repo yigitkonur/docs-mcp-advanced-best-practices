@@ -72,4 +72,4 @@ server.tool("health_check", "Check server health and KPIs. Returns per-component
 
 **Why it matters:** Agents that call tools blindly during a degraded server state waste context budget on retries. A structured health tool lets orchestrators skip to a fallback server or pause the session until degradation resolves.
 
-**Source:** Advanced MCP patterns research file (production deployment section); modelcontextprotocol.io observability guidance.
+**Source:** [modelcontextprotocol.io](https://modelcontextprotocol.io) observability guidance; [Stacklok — Performance Testing MCP Servers in Kubernetes](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb)

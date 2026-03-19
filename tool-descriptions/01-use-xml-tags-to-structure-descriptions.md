@@ -11,4 +11,4 @@ This pattern works because LLMs already have strong XML parsing priors from trai
 
 **Why it matters:** In testing, this reduced tool selection errors noticeably compared to free-text descriptions, especially when multiple tools have overlapping capabilities.
 
-**Source:** u/sjoti, r/mcp - "Good MCP design is understanding that every tool response is an opportunity to prompt the model" (279 upvotes). The author reports this pattern "works wonders" for separating when-to-use from how-to-use.
+**Source:** [u/sjoti on r/mcp](https://reddit.com/r/mcp/comments/1lq69b3/) — XML tags in descriptions "work wonders"

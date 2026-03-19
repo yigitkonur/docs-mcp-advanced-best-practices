@@ -4,7 +4,7 @@ Instead of registering every tool definition upfront, expose a single `execute_c
 
 Benchmarks from the Anthropic Engineering blog ("Code Execution with MCP") show the savings are dramatic at scale. A session with 1,000 tool definitions and a 2-hour transcript drops from 150k tokens to 2k — a 98.7% reduction. A 10,000-row spreadsheet filter task falls from 10k to 0.5k (95%). Loop-based Slack polling that previously paid the full context cost per iteration compresses to a single script call (80% reduction). The pattern trades cold-start latency and Docker overhead for massive token efficiency.
 
-The main production caveat (u/DurinClash, 215 upvotes) is transport: this pattern works cleanly with stdio-based local servers, but most production deployments use remote HTTP/SSE servers where OAuth flows and session management make dynamic discovery significantly more complex. Evaluate whether your deployment context supports it before committing to the architecture.
+The main production caveat (u/elusznik, 215 upvotes) is transport: this pattern works cleanly with stdio-based local servers, but most production deployments use remote HTTP/SSE servers where OAuth flows and session management make dynamic discovery significantly more complex. Evaluate whether your deployment context supports it before committing to the architecture.
 
 ```python
 # Single gateway tool registered in the MCP server
@@ -46,4 +46,4 @@ __result__ = result
 
 **Why it matters:** Paying the token cost for 1,000 tool definitions you might never call is like loading an entire library into RAM for a single book lookup — the code execution pattern turns that into a targeted fetch.
 
-**Source:** Anthropic Engineering blog "Code Execution with MCP"; github.com/elusznik/mcp-server-code-execution-mode; u/DurinClash r/ClaudeAI (215 upvotes).
+**Source:** [Anthropic — Code Execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp); [u/elusznik on r/mcp](https://reddit.com/r/mcp/comments/1oxmjzw/); [mcp-server-code-execution-mode](https://github.com/elusznik/mcp-server-code-execution-mode)

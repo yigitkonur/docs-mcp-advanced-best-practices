@@ -2,39 +2,36 @@
 
 FastMCP 3.0 introduced a layered visibility system that lets you show or hide tools at the session level without re-registering anything. This is the production-ready way to implement progressive tool disclosure in Python MCP servers.
 
-## Global Transforms (Apply to Every Session)
+## Disable by Tag (Apply to Every Session)
 
 ```python
 from fastmcp import FastMCP
-import mcp.types as types
 
 mcp = FastMCP("my-server")
 
 # Disable all tools tagged "advanced" by default
-@mcp.global_transform()
-async def hide_advanced_by_default(
-    tool: types.Tool,
-    context: dict
-) -> types.Tool | None:
-    if "advanced" in (tool.tags or []):
-        return None  # None = hide this tool
-    return tool
+mcp.disable(tags={"advanced"})
 ```
 
-## Session Transforms (Per-Session Overrides)
+## Per-Session Overrides (Inside a Tool Handler)
 
 ```python
-# In your session initialization handler:
-async def on_session_start(session_id: str, user_role: str):
-    if user_role == "admin":
-        # Unlock advanced tools for this session
-        await mcp.enable(tags=["advanced"], session_id=session_id)
-    if user_role == "readonly":
-        # Further restrict: only show read-prefixed tools
-        await mcp.disable(
-            filter=lambda t: not t.name.startswith("read_"),
-            session_id=session_id
-        )
+from fastmcp import FastMCP, Context
+
+@mcp.tool(tags=["core"])
+async def unlock_admin_mode(ctx: Context, role: str) -> str:
+    """Unlock tools based on user role."""
+    if role == "admin":
+        # Enable advanced tools for this session via context
+        await ctx.enable_components(tags={"advanced"})
+        return "Admin tools unlocked."
+    return "No additional tools available for this role."
+```
+
+You can also disable specific tools by name:
+
+```python
+mcp.disable(names={"dangerous_tool", "debug_tool"})
 ```
 
 ## Dynamic Unlock via Context Tool
@@ -57,4 +54,4 @@ Global transforms → session transforms → tool-level annotations. Later layer
 
 **Why it matters:** Without session-scoped visibility, you must re-register tools (which nukes the prefix cache) or maintain separate server instances per user tier. FastMCP transforms let you do progressive disclosure cleanly.
 
-**Source:** FastMCP 3.0 documentation (gofastmcp.com); dynamic-tools-patterns research file §3; r/mcp discussion on session-based tool visibility.
+**Source:** [FastMCP 3.0 docs — visibility](https://gofastmcp.com/servers/visibility); [FastMCP context docs](https://gofastmcp.com/python-sdk/fastmcp-server-context)
