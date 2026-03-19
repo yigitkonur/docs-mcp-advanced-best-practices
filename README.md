@@ -1,10 +1,24 @@
 # MCP Server Best Practices
 
-**112 battle-tested patterns for building MCP servers that LLMs actually use correctly.**
+**113 battle-tested patterns for building MCP servers that LLMs actually use correctly.**
 
 Synthesized from Anthropic engineering docs, 30+ Reddit threads, GitHub implementations, arXiv papers, and production experience.
 
-`112 patterns` | `15 categories` | `Tested across Claude, GPT-4, Gemini`
+`113 patterns` | `15 categories` | `Tested across Claude, GPT-4, Gemini`
+
+---
+
+## Use as a Claude Skill
+
+Install these patterns as an interactive Claude Code skill that routes you to the right pattern via decision trees:
+
+```bash
+npx -y skills add -y -g yigitkonur/skills-by-yigitkonur/skills/build-mcp-server
+```
+
+The skill includes 7 decision trees for common MCP development decisions and all 113 patterns as searchable references.
+
+---
 
 > **What is MCP?** The [Model Context Protocol](https://modelcontextprotocol.io/) is an open standard that lets AI assistants (Claude, GPT, Gemini, etc.) connect to external tools and data sources through a unified interface. MCP servers expose tools, resources, and prompts that LLMs call during conversations. Designing these servers well is the difference between an AI that fumbles through 15 tool calls and one that nails the task in 2.
 
@@ -33,24 +47,32 @@ The most impactful decisions when building an MCP server, distilled into one tab
 Pick the path that matches your situation:
 
 ### New to MCP
+You have heard about MCP and want to build your first server the right way. Start with the fundamentals -- how to think about tool design, why your responses matter more than you think, and the error handling pattern that separates working servers from broken ones.
+
 1. Read the [comprehensive master guide](MCP-SERVER-MASTERY.md) for full context
 2. Start with [Design Around User Intent, Not API Endpoints](tool-design/01-design-around-intent-not-endpoints.md)
 3. Then [Treat Every Tool Response as a Prompt](tool-responses/01-treat-every-response-as-a-prompt.md)
 4. Then [Use isError in the Result Object](error-handling/01-use-iserror-in-result-not-protocol-errors.md)
 
 ### Experienced MCP Builder
+You already have a working server but you are hitting scaling walls, cross-model issues, or context budget problems. These patterns address the problems that surface once you have 20+ tools or need to support multiple LLM providers.
+
 1. [Tool Descriptions Eat ~15% of Your Context Budget](context-engineering/01-tool-description-token-tax.md) -- understand the cost model
 2. [Use Meta-Tools for Large Tool Catalogs](progressive-discovery/01-meta-tools-for-large-catalogs.md) -- scale beyond 40 tools
 3. [Cross-Model Portable Schema Rules](schema-design/08-cross-model-portable-schema-rules.md) -- multi-model compatibility
 4. [Build Circuit Breakers for Agent Loop Detection](error-handling/08-circuit-breakers-for-loop-detection.md) -- production resilience
 
 ### Security-Focused
+You are deploying MCP servers that handle real user data, connect to production APIs, or will be exposed to untrusted input. These patterns address the attack surfaces specific to MCP -- including cross-tool hijacking, which has been demonstrated in the wild.
+
 1. [Sanitize User-Generated Content in Responses](security/01-sanitize-user-content-in-responses.md) -- prompt injection defense
 2. [Prevent Cross-Tool Hijacking via Shared Context](security/05-cross-tool-hijacking-via-shared-context.md) -- the attack most people miss
 3. [Use Delegated Permissions, Not Superuser](security/02-use-delegated-permissions-not-superuser.md) -- least privilege
 4. [Zero-Trust Policy Gateway](composition/07-zero-trust-policy-gateway.md) -- enforce policies at the gateway
 
 ### Performance-Focused
+Your MCP server works but it is too slow, too expensive, or falls over under load. These patterns cover the concrete numbers -- 98% token savings from lazy discovery, 10x throughput from session pooling, and the transport choices that make or break latency.
+
 1. [The Code Execution Pattern Saves 98% of Tool-Related Tokens](context-engineering/02-code-execution-lazy-tool-discovery.md)
 2. [Session Pooling for 10x Throughput](session-and-state/04-session-pooling-for-10x-throughput.md)
 3. [Transport Choice Makes or Breaks Performance](transport-and-ops/08-transport-performance-benchmarks.md)
@@ -60,11 +82,13 @@ Pick the path that matches your situation:
 
 ## Category Explorer
 
-Each pattern is a standalone guide with rationale, code examples, and pitfalls to avoid.
+Each pattern is a standalone guide with rationale, code examples, and pitfalls to avoid. Click any category to expand it.
 
 <!-- ====== TOOL DESIGN ====== -->
 <details>
-<summary><strong>Tool Design</strong> -- Intent-based design, workflow consolidation, planner tools <code>(8 patterns)</code></summary>
+<summary><strong>Tool Design</strong> -- 8 patterns</summary>
+
+The most impactful category. Most MCP servers fail because they wrap API endpoints 1:1 instead of designing around user intent. These 8 patterns show how to consolidate workflows, use planner tools, and design for model compatibility across tiers. If you only read one category, make it this one.
 
 | # | Pattern |
 |---|---|
@@ -81,7 +105,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== TOOL DESCRIPTIONS ====== -->
 <details>
-<summary><strong>Tool Descriptions</strong> -- XML structure, naming, examples, verbosity optimization <code>(11 patterns)</code></summary>
+<summary><strong>Tool Descriptions</strong> -- 11 patterns</summary>
+
+Your descriptions are the only thing standing between the model and correct tool selection. These 11 patterns cover XML structuring, the critical first-5-words rule, exclusionary guidance, and why verbose descriptions actually reduce call rates. Getting descriptions right has a bigger impact on accuracy than any amount of prompt engineering on the client side.
 
 | # | Pattern |
 |---|---|
@@ -101,7 +127,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== TOOL RESPONSES ====== -->
 <details>
-<summary><strong>Tool Responses</strong> -- Response-as-prompt, format enums, YAML/TSV, annotations <code>(10 patterns)</code></summary>
+<summary><strong>Tool Responses</strong> -- 10 patterns</summary>
+
+Every tool response is injected directly into the model's reasoning context -- it IS a prompt. These 10 patterns cover response-as-prompt design, YAML/TSV for token efficiency, content annotations for audience separation, and structured output schemas. A well-designed response can steer the model's next action more reliably than any system prompt instruction.
 
 | # | Pattern |
 |---|---|
@@ -120,7 +148,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== SCHEMA DESIGN ====== -->
 <details>
-<summary><strong>Schema Design</strong> -- Type coercion, flat schemas, enums, cross-model portability <code>(8 patterns)</code></summary>
+<summary><strong>Schema Design</strong> -- 8 patterns</summary>
+
+LLMs mishandle nested schemas, union types, and complex parameters at surprisingly high rates. These 8 patterns establish the flat-schema rule, type coercion with `z.coerce`, cross-model portability, and safe naming conventions. The difference between 98% parse success and <70% often comes down to whether your schema is flat or nested.
 
 | # | Pattern |
 |---|---|
@@ -137,7 +167,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== ERROR HANDLING ====== -->
 <details>
-<summary><strong>Error Handling</strong> -- isError patterns, educational errors, circuit breakers <code>(9 patterns)</code></summary>
+<summary><strong>Error Handling</strong> -- 9 patterns</summary>
+
+The difference between an agent that recovers and one that loops forever comes down to error design. These 9 patterns cover `isError` vs protocol errors, educational error messages, circuit breakers, and the critical distinction between "prevented" and "failed." Structured errors alone can improve task completion from 62% to 89%.
 
 | # | Pattern |
 |---|---|
@@ -155,7 +187,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== SECURITY ====== -->
 <details>
-<summary><strong>Security</strong> -- Prompt injection defense, RBAC, tool annotations, PII tokenization <code>(8 patterns)</code></summary>
+<summary><strong>Security</strong> -- 8 patterns</summary>
+
+MCP servers are a new attack surface. Cross-tool hijacking has been demonstrated in the wild -- a malicious tool can redirect legitimate tools without ever being called. These 8 patterns cover prompt injection defense, delegated permissions, PII tokenization, and OAuth2 scopes. If your server touches user data or production APIs, every one of these is relevant.
 
 | # | Pattern |
 |---|---|
@@ -172,7 +206,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== CONTEXT ENGINEERING ====== -->
 <details>
-<summary><strong>Context Engineering</strong> -- Token budgets, lazy discovery, tiered verbosity <code>(6 patterns)</code></summary>
+<summary><strong>Context Engineering</strong> -- 6 patterns</summary>
+
+Tool definitions silently eat ~15% of your context budget on every message. These 6 patterns cover the token tax, lazy tool discovery (98.7% savings), tiered verbosity, and the per-model tool limits that cause accuracy cliffs. Understanding context engineering is the key to building MCP servers that remain performant as they scale.
 
 | # | Pattern |
 |---|---|
@@ -187,7 +223,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== PROGRESSIVE DISCOVERY ====== -->
 <details>
-<summary><strong>Progressive Discovery</strong> -- Meta-tools, semantic search, session unlocking, visibility <code>(8 patterns)</code></summary>
+<summary><strong>Progressive Discovery</strong> -- 8 patterns</summary>
+
+When you exceed ~40 tools, model accuracy collapses. Progressive discovery is how you expose hundreds of capabilities without hitting that ceiling. These 8 patterns show how to use meta-tools, semantic search, session-based unlocking, and FastMCP visibility transforms to manage large tool catalogs while keeping accuracy high.
 
 | # | Pattern |
 |---|---|
@@ -204,7 +242,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== AGENTIC PATTERNS ====== -->
 <details>
-<summary><strong>Agentic Patterns</strong> -- Dependency chains, HATEOAS, guard tools, workflow stages <code>(6 patterns)</code></summary>
+<summary><strong>Agentic Patterns</strong> -- 6 patterns</summary>
+
+For multi-step workflows where ordering matters, documentation alone is not enough. These 6 patterns cover parameter dependency chains, HATEOAS-style available actions, guard tools, and server-enforced workflow stages. They let you embed workflow logic into the tool interface itself so the model cannot skip steps or call things out of order.
 
 | # | Pattern |
 |---|---|
@@ -219,7 +259,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== COMPOSITION ====== -->
 <details>
-<summary><strong>Composition</strong> -- Gateways, proxies, OpenAPI generation, provider-transform <code>(7 patterns)</code></summary>
+<summary><strong>Composition</strong> -- 7 patterns</summary>
+
+Running multiple MCP servers creates real operational problems -- naming collisions, duplicated auth, inconsistent error handling, and no single place to enforce policy. These 7 patterns cover meta-servers for cross-cutting concerns, OpenAPI-to-MCP proxy generation, gateway patterns, and zero-trust policy enforcement across server boundaries.
 
 | # | Pattern |
 |---|---|
@@ -235,7 +277,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== PROMPT GATES ====== -->
 <details>
-<summary><strong>Prompt Gates</strong> -- Tool authority, XML separation, state machines <code>(4 patterns)</code></summary>
+<summary><strong>Prompt Gates</strong> -- 4 patterns</summary>
+
+Tool responses carry surprising authority in the model's reasoning -- often more than system prompts. These 4 patterns cover how different models handle tool roles, XML tag separation for instructions vs data, and lightweight state machines via sequential responses. Understanding prompt gates lets you influence model behavior from inside tool responses.
 
 | # | Pattern |
 |---|---|
@@ -248,7 +292,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== RESOURCES AND PROMPTS ====== -->
 <details>
-<summary><strong>Resources and Prompts</strong> -- On-demand docs, templates, workflow prompts <code>(4 patterns)</code></summary>
+<summary><strong>Resources and Prompts</strong> -- 4 patterns</summary>
+
+MCP resources and prompts are underused because client support is inconsistent (49% for resources, 19% for prompts). These 4 patterns show when they work, when to fall back to tools, and how to use them for on-demand documentation. When the client does support them, resources and prompts can dramatically simplify your tool surface.
 
 | # | Pattern |
 |---|---|
@@ -261,7 +307,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== SESSION AND STATE ====== -->
 <details>
-<summary><strong>Session and State</strong> -- Background tasks, session pooling, compaction <code>(5 patterns)</code></summary>
+<summary><strong>Session and State</strong> -- 5 patterns</summary>
+
+Session management makes or breaks production MCP servers. These 5 patterns cover background tasks, session pooling (10x throughput verified by Stacklok benchmarks), conversation compaction priorities, and scoping state correctly. Getting session management wrong leads to memory leaks, stale data, and servers that degrade over hours.
 
 | # | Pattern |
 |---|---|
@@ -275,7 +323,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== TESTING ====== -->
 <details>
-<summary><strong>Testing</strong> -- Eval-driven dev, MCP Inspector, PromptFoo, transcript refactoring <code>(6 patterns)</code></summary>
+<summary><strong>Testing</strong> -- 6 patterns</summary>
+
+You cannot know if your tool descriptions work without measuring. These 6 patterns cover eval-driven development, the MCP Inspector, PromptFoo for cross-model testing, and feeding transcripts back for auto-refactoring. Testing MCP servers is fundamentally different from testing APIs -- you are testing whether an LLM can understand and use your tools, not just whether they return correct data.
 
 | # | Pattern |
 |---|---|
@@ -290,7 +340,9 @@ Each pattern is a standalone guide with rationale, code examples, and pitfalls t
 
 <!-- ====== TRANSPORT AND OPS ====== -->
 <details>
-<summary><strong>Transport and Ops</strong> -- stdio/HTTP transport, observability, caching, K8s deployment <code>(12 patterns)</code></summary>
+<summary><strong>Transport and Ops</strong> -- 12 patterns</summary>
+
+SSE is deprecated. stdio collapses under concurrency (0.64 req/s). Transport and operational choices have an outsized impact on whether your MCP server works in production. These 12 patterns cover transport selection, the critical stdout-clean rule, lazy connections, rate limiting, caching, health checks, and Kubernetes deployment.
 
 | # | Pattern |
 |---|---|
@@ -319,7 +371,7 @@ The full guide with extended explanations, code examples, design philosophy, and
 
 ---
 
-## Key Verified Sources
+## Verified Sources
 
 These are the authoritative sources referenced throughout the patterns:
 
@@ -361,3 +413,9 @@ These are the authoritative sources referenced throughout the patterns:
 ```
 
 Each pattern file is self-contained: it explains the problem, shows the solution with code, and highlights common mistakes.
+
+---
+
+## License
+
+This collection is open source. Use it, adapt it, share it. If you find it useful, a star helps others discover it.
